@@ -8,7 +8,7 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  url: https://git.intern.breidenbach.koeln/Alexander/homecluster.git
+  url: https://github.com/alb-dev/homecluster.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
