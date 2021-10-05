@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - jellyfin
 - homer
-- home-assistant
+#- home-assistant
 - system-upgrade
 - prometheus
 - vaultwarden
