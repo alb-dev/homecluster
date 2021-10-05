@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-jellyfin-cache
+  namespace: jellyfin
+spec:
+  volumeName: pv-jellyfin-cache
+  storageClassName: "nfs-jellyfin-cache"
+  accessModes: 
+  - ReadWriteOnce
+  resources:
+     requests: 
+      storage: 4096Mi
+  selector: 
+    matchLabels: 
+     usage: jellyfin-cache

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-jellyfin-cache
+  labels:
+    usage: jellyfin-cache
+  namespace: jellyfin
+spec:
+  capacity:
+    storage: 4096Mi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-jellyfin-cache
+  mountOptions:
+    - hard
+    - nfsvers=3
+  nfs:
+    path: /volume1/kubernetes/jellyfin/cache
+    server: "${NFS_SERVER}"
