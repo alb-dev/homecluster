@@ -46,7 +46,7 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "1000m"
-    volumes:
-      - name: storage
-        persistentVolumeClaim:
-          claimName: pvc-uptime-kuma
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: pvc-uptime-kuma
