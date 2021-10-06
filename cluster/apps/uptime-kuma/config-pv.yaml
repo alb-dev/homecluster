@@ -4,7 +4,7 @@ metadata:
   name: pv-uptime-kuma
   labels:
     usage: uptime-kuma
-  namespace: monitoring
+  namespace: uptime-kuma
 spec:
   capacity:
     storage: 4Gi

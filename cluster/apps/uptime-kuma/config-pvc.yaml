@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-uptime-kuma
-  namespace: monitoring
+  namespace: uptime-kuma
 spec:
   volumeName: uptime-kuma
   storageClassName: "nfs-uptime-kuma"
