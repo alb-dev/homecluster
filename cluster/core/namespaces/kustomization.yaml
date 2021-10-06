@@ -9,3 +9,4 @@ resources:
 - vaultwarden.yaml
 - home-assistant.yaml
 - monitoring.yaml
+- uptime-kuma.yaml
