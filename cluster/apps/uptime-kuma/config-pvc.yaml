@@ -4,7 +4,7 @@ metadata:
   name: pvc-uptime-kuma
   namespace: uptime-kuma
 spec:
-  volumeName: uptime-kuma
+  volumeName: pv-uptime-kuma
   storageClassName: "nfs-uptime-kuma"
   accessModes: 
   - ReadWriteOnce
