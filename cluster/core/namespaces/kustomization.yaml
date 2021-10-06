@@ -7,5 +7,5 @@ resources:
 - jellyfin.yaml
 - homer.yaml
 - vaultwarden.yaml
-#- home-assistant.yaml
+- home-assistant.yaml
 - monitoring.yaml
