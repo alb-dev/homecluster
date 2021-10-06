@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     component: uptime-kuma
-  name: deployment
+  name: uptime-kuma
   namespace: uptime-kuma
 spec:
   selector:
