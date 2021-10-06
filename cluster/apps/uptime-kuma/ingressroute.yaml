@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+  name: kuma-ingress
+spec:
+  tls:
+  - hosts:
+    - "uptime.${SECRET_DOMAIN}"
+  rules:
+  - host: "uptime.${SECRET_DOMAIN}"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service
+            port:
+              number: 3001
