@@ -7,3 +7,4 @@ resources:
 - nfs-provisioner-charts.yaml
 - traefik-charts.yaml
 - prometheus-community-charts.yaml
+- weaveworks-kured-charts.yaml
