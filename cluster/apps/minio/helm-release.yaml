@@ -8,7 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: minio
+      chart: minio-operator
       sourceRef:
         kind: GitRepository
         name: minio-charts
