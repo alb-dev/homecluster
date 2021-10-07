@@ -22,15 +22,15 @@ spec:
     updateStrategy: RollingUpdate
     configuration:
       timeZone: "Europe/Berlin"
-      startTime: "2am"
-      endTime: "10pm"
+      startTime: "10pm"
+      endTime: "2am"
       notifyUrl: "${SECRET_KURED_DISCORD_WEBHOOK}"
       messageTemplateDrain: "⏳ Draining node %s"
       messageTemplateReboot: "♻️ Rebooted node %s"
       rebootCommand: "/usr/bin/systemctl reboot"
  #     rebootSentinel: "! /usr/bin/needs-restarting -r"  
       rebootSentinelCommand: "! /usr/bin/needs-restarting -r"
-      period: "0h5m0s"  
+      period: "1h0m0s"  
     tolerations:
       - key: "node-role.kubernetes.io/master"
         operator: "Exists"
