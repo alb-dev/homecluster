@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 15m
-  url: https://github.com/minio/minio
+  url: https://charts.min.io/
   timeout: 3m
