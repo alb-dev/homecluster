@@ -9,6 +9,7 @@ spec:
   chart:
     spec:
       chart: minio
+      version: 3.1.8
       sourceRef:
         kind: GitRepository
         name: minio-charts
