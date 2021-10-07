@@ -8,10 +8,10 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: minio-charts
+      chart: minio
       sourceRef:
         kind: GitRepository
-        name: flux-system
+        name: minio-charts
         namespace: flux-system
       interval: 5m
   values:
