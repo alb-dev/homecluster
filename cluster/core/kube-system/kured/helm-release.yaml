@@ -28,7 +28,7 @@ spec:
       messageTemplateReboot: "♻️ Rebooted node %s"
       rebootCommand: "/usr/bin/systemctl reboot"
  #     rebootSentinel: "! /usr/bin/needs-restarting -r"  
-      rebootSentinelCommand: "! needs-restarting -r"
+      rebootSentinelCommand: "'! needs-restarting -r'"
       period: "0h5m0s"  
     tolerations:
       - key: "node-role.kubernetes.io/master"
