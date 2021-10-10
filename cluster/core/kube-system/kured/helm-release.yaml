@@ -29,7 +29,7 @@ spec:
       rebootCommand: "/usr/bin/systemctl reboot"
  #     rebootSentinel: "! /usr/bin/needs-restarting -r"  
       rebootSentinelCommand: "! /usr/bin/needs-restarting -r"
-      period: "1h0m0s"  
+      period: "0h5m0s"  
     tolerations:
       - key: "node-role.kubernetes.io/master"
         operator: "Exists"
