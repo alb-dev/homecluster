@@ -22,8 +22,8 @@ spec:
     updateStrategy: RollingUpdate
     configuration:
       timeZone: "Europe/Berlin"
-      startTime: "2pm"
-      endTime: "8pm"
+      startTime: "10pm"
+      endTime: "2am"
       messageTemplateDrain: "⏳ Draining node %s"
       messageTemplateReboot: "♻️ Rebooted node %s"
       rebootCommand: "/usr/bin/systemctl reboot"
