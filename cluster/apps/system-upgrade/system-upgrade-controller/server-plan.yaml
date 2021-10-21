@@ -7,7 +7,7 @@ metadata:
 spec:
   serviceAccountName: system-upgrade
   concurrency: 1
-  channel: https://update.k3s.io/v1-release/channels/v1.21
+  channel: https://update.k3s.io/v1-release/channels/v1.22
  # cordon wird nicht benötigt da es nur ein Server/master in diesem Fall gibt
   cordon: true
   nodeSelector:
@@ -16,12 +16,12 @@ spec:
         operator: In
         values:
           - "true"
+      - key: k3s-upgrade
+        operator: In
+        values:
+          - "true"
   tolerations:
-    - key: "node-role.kubernetes.io/control-plane=true"
-      effect: "NoExecute"
-      operator: "Exists"
-    - key: "node-role.kubernetes.io/control-plane=true"
-      effect: "NoSchedule"
+    - key: "node-role.kubernetes.io/master"
       operator: "Exists"
   upgrade:
     image: rancher/k3s-upgrade
