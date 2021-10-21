@@ -17,14 +17,13 @@ spec:
         operator: NotIn
         values:
           - "true"
-      - key: k3s-upgrade
-        operator: In
-        values:
-          - "true"
   prepare:
     image: rancher/k3s-upgrade
     args:
       - "prepare"
       - "k3s-server"
+  drain:
+    force: true
+    skipWaitForDeleteTimeout: 60 
   upgrade:
     image: rancher/k3s-upgrade

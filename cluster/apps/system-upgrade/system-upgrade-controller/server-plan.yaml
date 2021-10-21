@@ -16,12 +16,12 @@ spec:
         operator: In
         values:
           - "true"
-      - key: k3s-upgrade
-        operator: In
-        values:
-          - "true"
   tolerations:
-    - key: "node-role.kubernetes.io/master"
+    - key: "node-role.kubernetes.io/control-plane=true"
+      effect: "NoExecute"
+      operator: "Exists"
+    - key: "node-role.kubernetes.io/control-plane=true"
+      effect: "NoSchedule"
       operator: "Exists"
   upgrade:
     image: rancher/k3s-upgrade
