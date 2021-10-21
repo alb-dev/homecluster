@@ -4,7 +4,7 @@ resources:
 - jellyfin
 - homer
 - home-assistant
-#- system-upgrade
+- system-upgrade
 - prometheus
 - vaultwarden
 - uptime-kuma
