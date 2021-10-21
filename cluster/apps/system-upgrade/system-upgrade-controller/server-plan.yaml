@@ -4,6 +4,8 @@ kind: Plan
 metadata:
   name: k3s-server
   namespace: system-upgrade
+  labels:
+    k3s-upgrade: server
 spec:
   serviceAccountName: system-upgrade
   concurrency: 1
@@ -17,11 +19,7 @@ spec:
         values:
           - "true"
   tolerations:
-    - key: "node-role.kubernetes.io/control-plane=true"
-      effect: "NoExecute"
-      operator: "Exists"
-    - key: "node-role.kubernetes.io/control-plane=true"
-      effect: "NoSchedule"
+    - key: "node-role.kubernetes.io/master"
       operator: "Exists"
   upgrade:
     image: rancher/k3s-upgrade
