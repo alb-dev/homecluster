@@ -40,8 +40,6 @@ spec:
               value: kube-system
             - name: svc_enable
               value: "false"
-            - name: vip_leaderelection
-              value: "false"
             - name: vip_address
               value: "192.168.178.10"
           securityContext:
@@ -51,6 +49,10 @@ spec:
               - NET_RAW
               - SYS_TIME
       hostNetwork: true
+      hostAliases:
+      - hostnames:
+        - kubernetes
+        ip: 127.0.0.1
       nodeSelector:
         node-role.kubernetes.io/master: "true"
       serviceAccountName: kube-vip
