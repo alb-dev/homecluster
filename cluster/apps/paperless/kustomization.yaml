@@ -12,6 +12,6 @@ resources:
   - pvc-paperless-consume.yaml
   # pv and pvc for paperless export dir
   - pv-paperless-export.yaml
-  - export-paperless-pvc.yaml
+  - pvc-paperless-export.yaml
   - helm-release.yaml
 
