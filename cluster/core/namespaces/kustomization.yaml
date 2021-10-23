@@ -11,3 +11,4 @@ resources:
 - monitoring.yaml
 - uptime-kuma.yaml
 - minio.yaml
+- paperless.yaml
