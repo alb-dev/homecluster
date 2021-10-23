@@ -44,15 +44,6 @@ docs_dir: ./docs
 extra_css:
   - _static/custom.css
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/alb-dev
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/sTMX7Vh
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/devinbuhl
-
 # Plugins
 plugins:
   - search:
@@ -77,9 +68,8 @@ nav:
       - Preparing Nodes: installation/preparing-nodes.md
       - Installing Kubernetes: installation/installing-kubernetes.md
       - Bootstrap Applications: installation/bootstrap-applications.md
+  - Applications:
+      - Paperless: applications/paperless.md
   - Networking:
       - General: networking/general.md
       - DNS: networking/dns.md
-  - Storage:
-      - Rook PVC Backup: storage/rook-pvc-backup.md
-      - Rook PVC Restore: storage/rook-pvc-restore.md
