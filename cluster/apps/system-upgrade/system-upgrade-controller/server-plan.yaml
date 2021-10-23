@@ -19,7 +19,8 @@ spec:
         values:
           - "true"
   tolerations:
-    - key: "node-role.kubernetes.io/master"
-      operator: "Exists"
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
   upgrade:
     image: rancher/k3s-upgrade
