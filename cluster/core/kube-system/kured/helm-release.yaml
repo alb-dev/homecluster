@@ -29,7 +29,8 @@ spec:
       rebootCommand: "/usr/bin/systemctl reboot"
       period: "0h5m0s"  
     tolerations:
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
     metrics:
       create: true
