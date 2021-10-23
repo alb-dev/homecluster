@@ -9,3 +9,4 @@ resources:
 - vaultwarden
 - uptime-kuma
 - minio 
+- paperless
