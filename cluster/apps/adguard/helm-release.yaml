@@ -81,11 +81,9 @@ service:
             port: 53
             protocol: TCP
             targetPort: 53
-        externalTrafficPolicy: Local
         # add selector for shared services per ip 
         selector:
           app: adguard-home
-          release: adguard-home
       dns-udp:
         enabled: true
         annotations:
@@ -99,11 +97,9 @@ service:
             port: 53
             protocol: UDP
             targetPort: 53
-        externalTrafficPolicy: Local
         # add selector for shared services per ip 
         selector:
           app: adguard-home
-          release: adguard-home
       ingress:
           main:
             enabled: true
