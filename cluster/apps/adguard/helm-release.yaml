@@ -83,6 +83,7 @@ service:
             protocol: TCP
             targetPort: 53
         externalTrafficPolicy: Local
+        # add selector for shared services per ip 
         selector:
           app: adguard-home
           release: adguard-home
@@ -101,6 +102,7 @@ service:
             protocol: UDP
             targetPort: 53
         externalTrafficPolicy: Local
+        # add selector for shared services per ip 
         selector:
           app: adguard-home
           release: adguard-home
