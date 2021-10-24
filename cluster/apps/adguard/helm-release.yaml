@@ -83,17 +83,17 @@ spec:
           tls:
           - hosts:
               - "adguard.${SECRET_DOMAIN}"
-        dns-tcp:
-          enabled: true
-          type: LoadBalancer
-          spec:
-            loadBalancerIP: "192.168.178.242"
-          ports:
-            dns-tcp:
-              enabled: true
-              port: 53
-              protocol: TCP
-              targetPort: 53
+      dns-tcp:
+        enabled: true
+        type: LoadBalancer
+        spec:
+          loadBalancerIP: "192.168.178.242"
+        ports:
+          dns-tcp:
+            enabled: true
+            port: 53
+            protocol: TCP
+            targetPort: 53
          # externalTrafficPolicy: Local
         dns-udp:
           enabled: true
