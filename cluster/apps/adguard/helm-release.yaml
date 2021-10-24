@@ -70,8 +70,9 @@ spec:
               port: 3000
         dns-tcp:
           enabled: true
+          # follwoing is the shared key. it will be used to only use one ip for udp/tcp dns
           annotations:
-            metallb.universe.tf/allow-shared-ip: "adguard-home-dns-udp" 
+            metallb.universe.tf/allow-shared-ip: "adguard-home-dns" 
           type: LoadBalancer
           spec:
             loadBalancerIP: "192.168.178.242"
@@ -86,8 +87,9 @@ spec:
             app.kubernetes.io/name: adguard-home
         dns-udp:
           enabled: true
+          # follwoing is the shared key. it will be used to only use one ip for udp/tcp dns
           annotations:
-            metallb.universe.tf/allow-shared-ip: "adguard-home-dns-tcp" 
+            metallb.universe.tf/allow-shared-ip: "adguard-home-dns" 
           type: LoadBalancer
           spec:
             loadBalancerIP: "192.168.178.242"
