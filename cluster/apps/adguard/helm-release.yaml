@@ -17,7 +17,7 @@ spec:
         namespace: flux-system
   values:
       controller:
-        replicas: 3
+        replicas: 1
       initContainers:
         copy-configmap:
           image: busybox
