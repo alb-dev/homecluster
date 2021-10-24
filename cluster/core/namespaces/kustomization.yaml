@@ -12,3 +12,4 @@ resources:
 - uptime-kuma.yaml
 - minio.yaml
 - paperless.yaml
+- adguard.yaml
