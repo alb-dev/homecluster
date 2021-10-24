@@ -16,21 +16,9 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
     values:
-      #
-      # IMPORTANT NOTE
-      #
-      # This chart inherits from our common library chart. You can check the default values/options here:
-      # https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
-      #
-
       controller:
-        # -- Number of pods to load balance between
         replicas: 1
-
       initContainers:
-      # -- Configures an initContainer that copies the configmap to the AdGuardHome conf directory
-      # It does NOT overwrite when the file already exists.
-      # @default -- See values.yaml
         copy-configmap:
           image: busybox
           imagePullPolicy: IfNotPresent
@@ -50,7 +38,6 @@ spec:
             mountPath: /opt/adguardhome/conf
           securityContext:
             runAsUser: 2000
-
       image:
         # -- image repository
         repository: adguard/adguardhome
