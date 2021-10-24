@@ -135,7 +135,9 @@ spec:
         bind_host: 0.0.0.0
         bind_port: 3000
         beta_bind_port: 0
-        users: []
+        users: 
+          name: admin
+          password: $2a$10$MN3Dwd.00B3mb21q2Pxfpe7dg7Q8zM3uOQf01ANW.Nsad2Yv.JRUS
         auth_attempts: 5
         block_auth_min: 15
         http_proxy: ""
