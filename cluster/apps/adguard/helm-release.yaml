@@ -158,10 +158,7 @@ spec:
           - https://dns10.quad9.net/dns-query
           upstream_dns_file: ""
           bootstrap_dns:
-          - 9.9.9.10
-          - 149.112.112.10
-          - 2620:fe::10
-          - 2620:fe::fe:10
+          - 192.168.178.2
           all_servers: false
           fastest_addr: false
           allowed_clients: []
