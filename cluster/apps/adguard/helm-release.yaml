@@ -70,8 +70,8 @@ spec:
         dns:
           enabled: true
           type: LoadBalancer
-          externalIPs:
-            - "${SVC_ADGUARD_IP}"
+          spec:
+          loadBalancerIP: "192.168.178.242"
           ports:
             tcp:
               enabled: true
