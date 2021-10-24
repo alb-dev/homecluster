@@ -73,17 +73,16 @@ spec:
           type: LoadBalancer
           spec:
             loadBalancerIP: "192.168.178.242"
-          ports:
-            dns-tcp:
-              enabled: true
-              port: 53
-              protocol: TCP
-              targetPort: 53
-            dns-udp: 
-              enabled: true
-              port: 53
-              protocol: UDP
-              targetPort: 53
+          tcp:
+            enabled: true
+            port: 53
+            protocol: TCP
+            targetPort: 53
+          udp:
+            enabled: true
+            port: 53
+            protocol: UDP
+            targetPort: 53
           externalTrafficPolicy: Local
       ingress:
           main:
