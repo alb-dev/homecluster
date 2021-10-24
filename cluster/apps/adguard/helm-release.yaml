@@ -94,7 +94,7 @@ spec:
               port: 53
               protocol: TCP
               targetPort: 53
-          externalTrafficPolicy: Local
+         # externalTrafficPolicy: Local
         dns-udp:
           enabled: true
           type: LoadBalancer
@@ -106,7 +106,7 @@ spec:
               port: 53
               protocol: UDP
               targetPort: 53
-          externalTrafficPolicy: Local
+        #  externalTrafficPolicy: Local
 
       # -- Configure persistence settings for the chart under this key.
       # @default -- See values.yaml
