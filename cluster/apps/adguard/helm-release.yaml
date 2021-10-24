@@ -80,6 +80,8 @@ spec:
               protocol: TCP
               targetPort: 53
           externalTrafficPolicy: Local
+          selector:
+            app.kubernetes.io/name: adguard-home
         dns-udp:
           enabled: true
           type: LoadBalancer
@@ -92,6 +94,8 @@ spec:
               protocol: UDP
               targetPort: 53
           externalTrafficPolicy: Local
+          selector:
+            app.kubernetes.io/name: adguard-home
       ingress:
           main:
             enabled: true
