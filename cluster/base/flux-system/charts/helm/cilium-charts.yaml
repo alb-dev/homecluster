@@ -6,5 +6,5 @@ metadata:
   namespace: kube-system
 spec:
   interval: 30m
-  url: https://github.com/cilium/charts
+  url: https://helm.cilium.io/
   timeout: 2m
