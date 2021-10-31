@@ -9,3 +9,4 @@ resources:
 - prometheus-community-charts.yaml
 - weaveworks-kured-charts.yaml
 - minio-charts.yaml
+- cilium-charts.yaml
