@@ -20,7 +20,7 @@ spec:
     image:
       # -- image repository
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2021.10.7
+      tag: 2021.11.0
       # -- image pull policy
       pullPolicy: IfNotPresent
 
