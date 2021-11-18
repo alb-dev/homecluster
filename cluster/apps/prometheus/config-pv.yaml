@@ -7,7 +7,7 @@ metadata:
   namespace: monitoring
 spec:
   capacity:
-    storage: 20000Mi
+    storage: 20480Mi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
@@ -15,7 +15,7 @@ spec:
   storageClassName: nfs-prometheus
   mountOptions:
     - hard
-    - nfsvers=3
+    - nfsvers=4.1
   nfs:
     path: /volume1/kubernetes/prometheus
     server: "${NFS_SERVER}"

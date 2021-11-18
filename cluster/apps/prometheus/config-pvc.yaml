@@ -9,7 +9,7 @@ spec:
   - ReadWriteOnce
   resources:
      requests: 
-      storage: 20000Mi
+      storage: 20480Mi
   selector: 
     matchLabels: 
      usage: prometheus
