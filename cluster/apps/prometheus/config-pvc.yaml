@@ -5,6 +5,7 @@ metadata:
   namespace: monitoring
 spec:
   volumeName: pv-prometheus
+  storageClassName: "nfs-prometheus"
   accessModes: 
   - ReadWriteOnce
   resources:
