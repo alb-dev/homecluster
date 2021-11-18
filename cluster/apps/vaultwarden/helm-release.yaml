@@ -33,8 +33,16 @@ spec:
       # -- Config dir
         DATA_FOLDER: "config"
         DOMAIN: https://vaultwarden.${SECRET_DOMAIN}
-        SIGNUPS_ALLOWED: "true"
-
+        SIGNUPS_ALLOWED: "false"
+        SMTP_FROM_NAME: Vaultwarden
+        SMTP_HOST: mail.breidenbach.koeln
+        SMTP_PORT: 587
+        SMTP_SSL: "true"
+        TZ: "Europe/Berlin"
+        WEBSOCKET_ADDRESS: 0.0.0.0
+      envFrom:
+        - secretRef:
+            name: vaultwarden
       # -- Configures service settings for the chart. Normally this does not need to be modified.
       # @default -- See values.yaml
       service:
@@ -66,7 +74,20 @@ spec:
           tls:
           - hosts:
               - "vaultwarden.${SECRET_DOMAIN}"
-
+        admin:
+          enabled: true
+          ingressClassName: "traefik"
+          annotations:
+            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+          hosts:
+            - host: "vaultwarden.${SECRET_DOMAIN}"
+              paths:
+                - path: /admin
+                  pathType: Prefix
+          tls:
+            - hosts:
+                - "vaultwarden.${SECRET_DOMAIN}"
       # -- Configure persistence settings for the chart under this key.
       # @default -- See values.yaml
       persistence:
