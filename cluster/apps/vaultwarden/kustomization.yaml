@@ -4,4 +4,5 @@ resources:
   - config-pv.yaml
   - config-pvc.yaml
   - helm-release.yaml
+  - secret.sops.yaml
 
