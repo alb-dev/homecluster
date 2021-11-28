@@ -10,3 +10,4 @@ resources:
 - weaveworks-kured-charts.yaml
 - minio-charts.yaml
 - cilium-charts.yaml
+- falco-security-charts.yaml

@@ -13,3 +13,4 @@ resources:
 - minio.yaml
 - paperless.yaml
 - adguard.yaml
+- falco-system.yaml
