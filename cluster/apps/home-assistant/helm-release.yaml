@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: home-assistant
-      version: 11.1.0
+      version: 11.2.0
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -20,7 +20,7 @@ spec:
     image:
       # -- image repository
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2021.11.4
+      tag: 2021.11.5
       # -- image pull policy
       pullPolicy: IfNotPresent
 
