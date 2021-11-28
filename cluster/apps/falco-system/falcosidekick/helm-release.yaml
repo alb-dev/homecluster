@@ -21,12 +21,12 @@ spec:
       registry: public.ecr.aws
     replicaCount: 1
     config:
-      existingSecret: falcosidekick
+  #    existingSecret: falcosidekick
       extraEnv:
         - name: WEBUI_URL
           value: http://falco-sidekick-falcosidekick-ui:2802
-        - name: DISCORD_MINIMUMPRIORITY
-          value: critical
+#        - name: DISCORD_MINIMUMPRIORITY
+#          value: critical
     ingress:
       enabled: true
       annotations:
