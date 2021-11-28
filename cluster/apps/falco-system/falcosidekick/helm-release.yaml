@@ -32,6 +32,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
       hosts:
         - host: "falcosidekick.${SECRET_DOMAIN}"
           paths:
@@ -48,6 +49,7 @@ spec:
         annotations:
           kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
         hosts:
           - host: "falcosidekick-ui.${SECRET_DOMAIN}"
             paths:
