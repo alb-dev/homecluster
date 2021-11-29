@@ -11,4 +11,4 @@ resources:
 - minio 
 - paperless
 - adguard
-- falco-system
+#- falco-system
