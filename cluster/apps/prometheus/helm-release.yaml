@@ -648,11 +648,11 @@ spec:
             traefik.ingress.kubernetes.io/tls-acme: "true"
             traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
         hosts:
-            - "prometheus.${SECRET_DOMAIN}"
+            - "grafana.${SECRET_DOMAIN}"
         path: /
         tls:
           - hosts:
-              - "prometheus.${SECRET_DOMAIN}"
+              - "grafana.${SECRET_DOMAIN}"
 
       sidecar:
         dashboards:
@@ -2274,13 +2274,13 @@ spec:
         storageSpec: {}
         ## Using PersistentVolumeClaim
         ##
-        #  volumeClaimTemplate:
-        #    spec:
-        #      storageClassName: gluster
-        #      accessModes: ["ReadWriteOnce"]
-        #      resources:
-        #        requests:
-        #          storage: 50Gi
+          volumeClaimTemplate:
+            spec:
+              storageClassName: gluster
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 20Gi
         #    selector: {}
 
         ## Using tmpfs volume
