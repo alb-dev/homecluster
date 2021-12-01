@@ -8,7 +8,7 @@ resources:
 - prometheus
 - vaultwarden
 - uptime-kuma
-- minio 
+#- minio 
 - paperless
 - adguard
 - falco-system
