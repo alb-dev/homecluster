@@ -2264,9 +2264,9 @@ spec:
 
         ## Resource limits & requests
         ##
-        resources: {}
-        # requests:
-        #   memory: 400Mi
+        resources: 
+         requests:
+           memory: 2000Mi
 
         ## Prometheus StorageSpec for persistent data
         ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md
