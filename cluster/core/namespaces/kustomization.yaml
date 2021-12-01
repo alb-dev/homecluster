@@ -10,7 +10,7 @@ resources:
 - home-assistant.yaml
 - monitoring.yaml
 - uptime-kuma.yaml
-- minio.yaml
+#- minio.yaml
 - paperless.yaml
 - adguard.yaml
 - falco-system.yaml
