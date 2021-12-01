@@ -2271,16 +2271,16 @@ spec:
         ## Prometheus StorageSpec for persistent data
         ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/user-guides/storage.md
         ##
-        storageSpec: 
+        storageSpec: {}
         ## Using PersistentVolumeClaim
         ##
-          volumeClaimTemplate:
-            spec:
-              claimName: pvc-prometheus
-              accessModes: ["ReadWriteOnce"]
-              resources:
-                requests:
-                  storage: 20Gi
+        #  volumeClaimTemplate:
+        #    spec:
+        #      claimName: pvc-prometheus
+        #      accessModes: ["ReadWriteOnce"]
+        #      resources:
+        #        requests:
+        #          storage: 20Gi
         #    selector: {}
 
         ## Using tmpfs volume
