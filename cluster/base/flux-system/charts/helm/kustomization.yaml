@@ -8,6 +8,6 @@ resources:
 - traefik-charts.yaml
 - prometheus-community-charts.yaml
 - weaveworks-kured-charts.yaml
-- minio-charts.yaml
+#- minio-charts.yaml
 - cilium-charts.yaml
 - falco-security-charts.yaml
