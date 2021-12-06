@@ -72,7 +72,7 @@ spec:
         volumeSpec:
           nfs:
             server: "${NFS_SERVER}"
-            path: /volume1/kubernetes/jellyfin/config
+            path: /volume1/kubernetes/minio/
         mountPath: /data
     podAnnotations:
       secret.reloader.stakater.com/reload: "minio"
