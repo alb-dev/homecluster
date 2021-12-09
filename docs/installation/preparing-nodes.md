@@ -1,38 +1,16 @@
 # Preparing Nodes
 
-## Install Ubuntu
+## Install Proxmox
 
-Download Ubuntu Server 21.04 ISO and flash it to a USB drive, boot the device from the USB drive and install Ubuntu
+Download Proxmox VE and flash it to a USB drive, boot the device from the USB drive and install Proxmox VE
 
-### Copy over SSH key from the machine running Ansible
+### Configure Proxmox and the network
 
-```sh
-ssh-copy-id ubuntu@192.168.42.10
-```
+!!! Use as Static IP for your Proxmox node. This makes it way more easy to create a cluster with new nodes.
 
-### Configure static IPs
 
-!!! warning "Set a static IP on your nodes or you may run into issues with Alpine containers"
+## Prepare Ubuntu/Centos for k8s
 
-```yaml
-# /etc/netplan/00-installer-config.yaml
-network:
-  ethernets:
-    eno1:
-      addresses:
-        - 192.168.42.10/24
-      gateway4: 192.168.42.1
-      nameservers:
-        addresses:
-          - 192.168.1.1
-        search: []
-  version: 2
-```
+K8s Images are Build with Hashicorps Packer. With serveral configs which will prepare both os for automatic patching with kured 
 
-## Prepare Ubuntu for k8s
-
-!!! info "Update Ansible inventory configuration and run the `ubuntu-prepare` playbook"
-
-```sh
-task ansible:playbook:ubuntu-prepare
-```
+# TODO - Add Link for Packer Repo 
