@@ -11,6 +11,6 @@ Download Proxmox VE and flash it to a USB drive, boot the device from the USB dr
 
 ## Prepare Ubuntu/Centos for k8s
 
-K8s Images are Build with Hashicorps Packer. With serveral configs which will prepare both os for automatic patching with kured 
+K8s Images are Build with Hashicorps Packer. With serveral configs which will prepare both os for automatic patching with kured.  
 
 # TODO - Add Link for Packer Repo 
