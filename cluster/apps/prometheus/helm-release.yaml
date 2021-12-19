@@ -1270,6 +1270,8 @@ spec:
 
     ## Configuration for kube-state-metrics subchart
     ##
+    kubeStateMetrics:
+      enabled: true
     kube-state-metrics:
       namespaceOverride: ""
       rbac:
@@ -1320,8 +1322,10 @@ spec:
 
     ## Configuration for prometheus-node-exporter subchart
     ##
+    nodeExporter:
+     enabled: true
     prometheus-node-exporter:
-      namespaceOverride: ""
+      namespaceOverride: node-exporter
       podLabels:
         ## Add the 'node-exporter' label to be used by serviceMonitor to match standard common usage in rules and grafana dashboards
         ##
