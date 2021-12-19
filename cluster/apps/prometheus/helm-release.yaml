@@ -1270,8 +1270,6 @@ spec:
 
     ## Configuration for kube-state-metrics subchart
     ##
-    kubeStateMetrics:
-      enabled: true
     kube-state-metrics:
       namespaceOverride: ""
       rbac:
@@ -1325,8 +1323,6 @@ spec:
 
     ## Configuration for prometheus-node-exporter subchart
     ##
-    nodeExporter:
-     enabled: true
     prometheus-node-exporter:
       namespaceOverride: ""
       podLabels:
