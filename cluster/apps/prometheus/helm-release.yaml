@@ -1272,50 +1272,6 @@ spec:
     ##
     kube-state-metrics:
       fullnameOverride: kube-state-metrics
-
-    ## Deploy node exporter as a daemonset to all nodes
-    ##
-    nodeExporter:
-      enabled: true
-
-      ## Use the value configured in prometheus-node-exporter.podLabels
-      ##
-      jobLabel: jobLabel
-
-      serviceMonitor:
-        ## Scrape interval. If not set, the Prometheus default scrape interval is used.
-        ##
-        interval: ""
-
-        ## proxyUrl: URL of a proxy that should be used for scraping.
-        ##
-        proxyUrl: ""
-
-        ## How long until a scrape request times out. If not set, the Prometheus default scape timeout is used.
-        ##
-        scrapeTimeout: ""
-
-        ## Metric relabel configs to apply to samples before ingestion.
-        ##
-        metricRelabelings: []
-        # - sourceLabels: [__name__]
-        #   separator: ;
-        #   regex: ^node_mountstats_nfs_(event|operations|transport)_.+
-        #   replacement: $1
-        #   action: drop
-
-        ## relabel configs to apply to samples before ingestion.
-        ##
-        relabelings: []
-        # - sourceLabels: [__meta_kubernetes_pod_node_name]
-        #   separator: ;
-        #   regex: ^(.*)$
-        #   targetLabel: nodename
-        #   replacement: $1
-        #   action: replace
-
-    ## Configuration for prometheus-node-exporter subchart
-    ##
     prometheus-node-exporter:
       fullnameOverride: node-exporter
       prometheus:
