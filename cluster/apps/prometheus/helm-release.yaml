@@ -1318,24 +1318,9 @@ spec:
     ##
     prometheus-node-exporter:
       fullnameOverride: node-exporter
-      podLabels:
-        ## Add the 'node-exporter' label to be used by serviceMonitor to match standard common usage in rules and grafana dashboards
-        ##
-        jobLabel: node-exporter
-      extraArgs:
-        - --collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
-        - --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
-      service:
-        portName: http-metrics
       prometheus:
         monitor:
           enabled: true
-          podLabels:
-            ## Add the 'node-exporter' label to be used by serviceMonitor to match standard common usage in rules and grafana dashboards
-            ##
-            jobLabel: node-exporter
-    ## Manages Prometheus and Alertmanager components
-    ##
     prometheusOperator:
       enabled: true
 
