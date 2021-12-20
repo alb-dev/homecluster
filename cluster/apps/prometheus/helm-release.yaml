@@ -235,6 +235,7 @@ spec:
         annotations:
             traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
             traefik.ingress.kubernetes.io/tls-acme: "true"
+            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
         hosts:
             - "alertmanager.${SECRET_DOMAIN}"
 
@@ -1660,85 +1661,18 @@ spec:
       #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
 
       ingress:
-        enabled: false
-
-        # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-        # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-        # ingressClassName: nginx
-
-        annotations: {}
-        labels: {}
-
-        ## Hostnames.
-        ## Must be provided if Ingress is enabled.
-        ##
-        # hosts:
-        #   - prometheus.domain.com
-        hosts: []
-
-        ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
-        ##
-        paths: []
-        # - /
-
-        ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-        ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-        # pathType: ImplementationSpecific
-
-        ## TLS configuration for Prometheus Ingress
-        ## Secret must be manually created in the namespace
-        ##
-        tls: []
-          # - secretName: prometheus-general-tls
-          #   hosts:
-          #     - prometheus.example.com
-
-      ## Configuration for creating an Ingress that will map to each Prometheus replica service
-      ## prometheus.servicePerReplica must be enabled
-      ##
-      ingressPerReplica:
-        enabled: false
-
-        # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-        # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-        # ingressClassName: nginx
-
-        annotations: {}
-        labels: {}
-
-        ## Final form of the hostname for each per replica ingress is
-        ## {{ ingressPerReplica.hostPrefix }}-{{ $replicaNumber }}.{{ ingressPerReplica.hostDomain }}
-        ##
-        ## Prefix for the per replica ingress that will have `-$replicaNumber`
-        ## appended to the end
-        hostPrefix: ""
-        ## Domain that will be used for the per replica ingress
-        hostDomain: ""
-
-        ## Paths to use for ingress rules
-        ##
-        paths: []
-        # - /
-
-        ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-        ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-        # pathType: ImplementationSpecific
-
-        ## Secret name containing the TLS certificate for Prometheus per replica ingress
-        ## Secret must be manually created in the namespace
-        tlsSecretName: ""
-
-        ## Separated secret for each per replica Ingress. Can be used together with cert-manager
-        ##
-        tlsSecretPerReplica:
-          enabled: false
-          ## Final form of the secret for each per replica ingress is
-          ## {{ tlsSecretPerReplica.prefix }}-{{ $replicaNumber }}
-          ##
-          prefix: "prometheus"
-
-      ## Configure additional options for default pod security policy for Prometheus
-      ## ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
+        enabled: true
+        pathType: Prefix
+        ingressClassName: "traefik"
+        annotations:
+            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+            traefik.ingress.kubernetes.io/tls-acme: "true"
+            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+        hosts:
+          - "prometheus.${SECRET_DOMAIN}"
+        tls:
+          - hosts:
+              - "prometheus.${SECRET_DOMAIN}"
       podSecurityPolicy:
         allowedCapabilities: []
         allowedHostPaths: []
