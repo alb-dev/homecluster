@@ -1336,7 +1336,7 @@ spec:
         portName: http-metrics
       prometheus:
         monitor:
-          enabled: false
+          enabled: true
           podLabels:
             ## Add the 'node-exporter' label to be used by serviceMonitor to match standard common usage in rules and grafana dashboards
             ##
