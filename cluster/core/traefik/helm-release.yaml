@@ -61,7 +61,7 @@ spec:
       - "--providers.kubernetesingress.ingressclass=traefik"
       - "--metrics.prometheus=true"
       - "--metrics.prometheus.entryPoint=metrics"
-      - "--entryPoints.websecure.forwardedHeaders.trustedIPs=192.168.178.0/24,"
+      - "--entryPoints.websecure.forwardedHeaders.trustedIPs=192.168.178.0/24"
     additionalArguments:
       - "--providers.kubernetesingress.ingressendpoint.ip=192.168.178.241"
       - "--certificatesresolvers.leresolver.acme.dnschallenge=true"
