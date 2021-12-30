@@ -120,5 +120,6 @@ spec:
     # @default -- See values.yaml
     redis:
       enabled: true
+      storageClass: "nfs-client"
       auth:
         enabled: false
