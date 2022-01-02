@@ -935,58 +935,15 @@ spec:
        - 192.168.178.26
        - 192.168.178.27
        - 192.168.178.36
-
-      ## If using kubeControllerManager.endpoints only the port and targetPort are used
-      ##
       service:
         enabled: true
         port: 10252
         targetPort: 10252
-        # selector:
-        #   component: kube-controller-manager
-
+     # entnommen von k8s at home von onedrop
       serviceMonitor:
         enabled: true
-        ## Scrape interval. If not set, the Prometheus default scrape interval is used.
-        ##
-        interval: ""
-
-        ## proxyUrl: URL of a proxy that should be used for scraping.
-        ##
-        proxyUrl: ""
-
-        ## Enable scraping kube-controller-manager over https.
-        ## Requires proper certs (not self-signed) and delegated authentication/authorization checks
-        ##
-        https: false
-
-        # Skip TLS certificate validation when scraping
-        insecureSkipVerify: null
-
-        # Name of the server to use when validating TLS certificate
-        serverName: null
-
-        ## MetricRelabelConfigs to apply to samples after scraping, but before ingestion.
-        ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
-        ##
-        metricRelabelings: []
-        # - action: keep
-        #   regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
-        #   sourceLabels: [__name__]
-
-        ## RelabelConfigs to apply to samples before scraping
-        ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
-        ##
-        relabelings: []
-        # - sourceLabels: [__meta_kubernetes_pod_node_name]
-        #   separator: ;
-        #   regex: ^(.*)$
-        #   targetLabel: nodename
-        #   replacement: $1
-        #   action: replace
-
-    ## Component scraping coreDns. Use either this or kubeDns
-    ##
+        https: true
+        insecureSkipVerify: true
     coreDns:
       enabled: true
       service:
@@ -1167,50 +1124,10 @@ spec:
         enabled: true
         port: 10251
         targetPort: 10251
-        # selector:
-        #   component: kube-scheduler
-
       serviceMonitor:
         enabled: true
-        ## Scrape interval. If not set, the Prometheus default scrape interval is used.
-        ##
-        interval: ""
-        ## proxyUrl: URL of a proxy that should be used for scraping.
-        ##
-        proxyUrl: ""
-        ## Enable scraping kube-scheduler over https.
-        ## Requires proper certs (not self-signed) and delegated authentication/authorization checks
-        ##
-        https: false
-
-        ## Skip TLS certificate validation when scraping
-        insecureSkipVerify: null
-
-        ## Name of the server to use when validating TLS certificate
-        serverName: null
-
-        ## MetricRelabelConfigs to apply to samples after scraping, but before ingestion.
-        ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
-        ##
-        metricRelabelings: []
-        # - action: keep
-        #   regex: 'kube_(daemonset|deployment|pod|namespace|node|statefulset).+'
-        #   sourceLabels: [__name__]
-
-        ## RelabelConfigs to apply to samples before scraping
-        ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#relabelconfig
-        ##
-        relabelings: []
-        # - sourceLabels: [__meta_kubernetes_pod_node_name]
-        #   separator: ;
-        #   regex: ^(.*)$
-        #   targetLabel: nodename
-        #   replacement: $1
-        #   action: replace
-
-
-    ## Component scraping kube proxy
-    ##
+        https: true
+        insecureSkipVerify: true
     kubeProxy:
       enabled: true
 
