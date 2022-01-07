@@ -11,3 +11,4 @@ resources:
 - minio-charts.yaml
 - cilium-charts.yaml
 - falco-security-charts.yaml
+- metrics-server-charts.yaml
