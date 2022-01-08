@@ -5,4 +5,5 @@ resources:
 - kured
 - metrics-server
 - intel-gpu-plugin
+- node-feature-discovery
 #- cilium
