@@ -64,6 +64,10 @@ spec:
     # -- Configure persistence settings for the chart under this key.
     # @default -- See values.yaml
     persistence:
+      transcode:
+        enabled: true
+        type: emptyDir
+        medium: Memory
       config:
         enabled: true
         existingClaim: pvc-jellyfin-config
