@@ -934,8 +934,8 @@ spec:
        - 192.168.178.36
       service:
         enabled: true
-        port: 10252
-        targetPort: 10252
+        port: 10257
+        targetPort: 10257
      # entnommen von k8s at home von onedrop
       serviceMonitor:
         enabled: true
