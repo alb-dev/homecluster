@@ -7,4 +7,3 @@ resources:
 - traefik
 - system-upgrade
 - kube-system
-- node-feature-discovery
