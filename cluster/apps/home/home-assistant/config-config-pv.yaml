@@ -1,21 +1,21 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-homer
+  name: pv-home-assistant-config
   labels:
-    usage: homer
+    usage: home-assistant-config
   namespace: home
 spec:
   capacity:
-    storage: 128Mi
+    storage: 10240Mi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: nfs-homer-config
+  storageClassName: nfs-home-assistant-config
   mountOptions:
     - hard
-    - nfsvers=3
+    - nfsvers=4.1
   nfs:
-    path: /volume1/kubernetes/homer
+    path: /volume1/kubernetes/home-assistant/data
     server: "${NFS_SERVER}"
