@@ -14,3 +14,4 @@ resources:
 - paperless.yaml
 - adguard.yaml
 - falco-system.yaml
+- home.yaml
