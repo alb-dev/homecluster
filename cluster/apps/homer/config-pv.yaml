@@ -4,7 +4,7 @@ metadata:
   name: pv-homer
   labels:
     usage: homer
-  namespace: homer
+  namespace: home
 spec:
   capacity:
     storage: 128Mi
