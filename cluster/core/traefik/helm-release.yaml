@@ -25,7 +25,7 @@ spec:
     deployment:
       kind: Deployment
 #### Nur eine Instanz Augrund der Let's Encrypt challange
-      replicas: 1
+      replicas: 2
     service:
       enabled: true
       type: LoadBalancer
