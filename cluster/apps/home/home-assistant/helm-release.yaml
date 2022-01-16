@@ -34,9 +34,11 @@ spec:
     # @default -- See values.yaml
     service:
       main:
-        ports:
-          http:
-            port: 8123
+        type: LoadBalancer
+        loadBalancerIP: "${SVC_HASS_IP}"
+ #       ports:
+ #         http:
+ #           port: 8123
 
     ingress:
       main:
