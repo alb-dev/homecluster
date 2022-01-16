@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: home-assistant-config
-  namespace: home-assistant
+  namespace: home
 spec:
   storageClassName: "nfs-home-assistant-config" # Empty string must be explicitly set otherwise default StorageClass will be set
   volumeName: pv-home-assistant-config
