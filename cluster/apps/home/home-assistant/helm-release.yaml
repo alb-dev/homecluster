@@ -23,6 +23,8 @@ spec:
       pullPolicy: IfNotPresent
     env:
       TZ: "Europe/Berlin"
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
     service:
       main:
         type: LoadBalancer
