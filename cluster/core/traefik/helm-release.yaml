@@ -30,7 +30,8 @@ spec:
       enabled: true
       type: LoadBalancer
       spec:
-       loadBalancerIP: "192.168.178.241"
+       loadBalancerIP: "${TRAFIK_LB_IP}"
+       externalTrafficPolicy: Local
 #        externalIPs:
 #          - 192.168.178.241
     persistence:
@@ -63,7 +64,7 @@ spec:
       - "--metrics.prometheus.entryPoint=metrics"
       - "--entryPoints.websecure.forwardedHeaders.trustedIPs=10.10.0.0/16"
     additionalArguments:
-      - "--providers.kubernetesingress.ingressendpoint.ip=192.168.178.241"
+      - "--providers.kubernetesingress.ingressendpoint.ip=${TRAFIK_LB_IP}"
       - "--certificatesresolvers.leresolver.acme.dnschallenge=true"
       - "--certificatesresolvers.leresolver.acme.dnschallenge.provider=netcup"
       - "--certificatesresolvers.leresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
