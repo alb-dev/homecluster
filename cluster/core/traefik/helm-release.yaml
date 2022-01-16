@@ -31,7 +31,7 @@ spec:
       type: LoadBalancer
       spec:
        loadBalancerIP: "${TRAFIK_LB_IP}"
-       externalTrafficPolicy: Local
+#       externalTrafficPolicy: Local
 #        externalIPs:
 #          - 192.168.178.241
     persistence:
