@@ -26,7 +26,7 @@ spec:
       endTime: "2am"
       messageTemplateDrain: "⏳ Draining node %s"
       messageTemplateReboot: "♻️ Rebooted node %s"
-      rebootSentinelCommand: "! /usr/bin/needs-restarting -r"
+      rebootSentinelCommand: "! needs-restarting -r"
       rebootCommand: "/usr/bin/systemctl reboot"
       period: "1h0m0s"  
     tolerations:
