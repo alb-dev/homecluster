@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       files: "${{ steps.extract.outputs.files }}"
-    steps:
+    steps: 
       - uses: actions/checkout@v2
       - uses: dorny/paths-filter@v2
         id: filter
