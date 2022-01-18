@@ -32,4 +32,4 @@ Thanks to all the people who donate their time to the [Kubernetes @Home](https:/
 
 ## Inspiration
 
-A lot of inspiration is taken from [Kubernetes @oneDrop](https://github.com/onedr0p/home-ops)
+A lot of inspiration is taken from [Kubernetes @oneDrop](https://github.com/onedr0p/home-ops) and [Kubernetes @toboshii](https://github.com/toboshii/home-cluster)
