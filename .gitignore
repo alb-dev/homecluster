@@ -1,0 +1,2 @@
+server/terraform.tfvars
+server/.terraform*
