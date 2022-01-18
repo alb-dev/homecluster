@@ -12,7 +12,7 @@ variable "common" {
     os_type       = "cloud-init"
     clone         = "linux-ubuntu-server-20.04"
     search_domain = "intern.breidenbach.koeln"
-    nameserver    = "192.168.178.2"
+    nameserver    = "192.168.178.1"
   }
 }
 
