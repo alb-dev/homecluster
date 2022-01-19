@@ -24,7 +24,8 @@
       "cluster/.+\\.yaml$"
     ]
   },
-    // regexManager to read and process kube-prometheus-stack CRD's
+  "regexManagers": [
+    // regexManager to read and process kube-prometheus-stack CRDs
     {
       "fileMatch": [
         "cluster/crds/kube-prometheus-stack/.+\\.yaml$"
