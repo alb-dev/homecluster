@@ -1,2 +1,4 @@
-server/terraform.tfvars
-server/.terraform*
+.terraform
+.terraform.tfstate*
+terraform.tfstate*
+terraform.tfvars
