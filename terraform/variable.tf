@@ -56,7 +56,7 @@ variable "workers" {
   default = {
     k8s-worker01 = {
       id          = 4020
-      cidr        = "192.168.178.230/24"
+      cidr        = "192.168.178.14/24"
       cores       = 4
       gw          = "192.168.178.1"
       memory      = 8192
@@ -65,7 +65,7 @@ variable "workers" {
     },
     k8s-worker02 = {
       id          = 4021
-      cidr        = "192.168.178.231/24"
+      cidr        = "192.168.178.15/24"
       cores       = 4
       gw          = "192.168.178.1"
       memory      = 8192
@@ -74,7 +74,7 @@ variable "workers" {
     },
     k8s-worker03 = {
       id          = 4022
-      cidr        = "192.168.178.232/24"
+      cidr        = "192.168.178.16/24"
       cores       = 4
       gw          = "192.168.178.1"
       memory      = 8192
