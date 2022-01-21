@@ -12,10 +12,6 @@ resource "proxmox_vm_qemu" "kube-master" {
     model    = "virtio"
     bridge   = "vmbr0"
   }
-  network {
-    model  = "virtio"
-    bridge = "vmbr0"
-  }
   disk {
     type    = "scsi"
     storage = "local-lvm"
