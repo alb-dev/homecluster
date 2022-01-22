@@ -1,10 +1,8 @@
-- include: addon.yaml
+---
+- import_tasks: k3s.yaml
 
-- name: k3s | cluster configuration
-  include_role:
-    name: xanmanning.k3s
-    public: yes
+- import_tasks: addon.yaml
 
-- include: cleanup.yaml
+- import_tasks: cleanup.yaml
 
-- include: kubeconfig.yaml
+- import_tasks: kubeconfig.yaml

@@ -10,7 +10,7 @@ kubernetes:
         k8s-cp-2:
           ansible_host: 192.168.178.13
       vars:
-        ansible_user: k8s
+        ansible_user: nao
     worker:
       hosts:
         k8s-wk-3:
@@ -19,7 +19,7 @@ kubernetes:
           ansible_host: 192.168.178.15
         k8s-wk-5:
           ansible_host: 192.168.178.16
-        k8s-wk-5:
+        k8s-wk-6:
           ansible_host: 192.168.178.16
       vars:
-        ansible_user: k8s
+        ansible_user: nao

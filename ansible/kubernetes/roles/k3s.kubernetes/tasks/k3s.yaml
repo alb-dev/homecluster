@@ -1,4 +1,4 @@
----
+- import_tasks: k3s.yml
 
 - name: addons | check if cluster is installed
   ansible.builtin.stat:
@@ -11,3 +11,8 @@
     k3s_server_manifests_templates: []
     k3s_server_manifests_urls: []
   when: k3s_check_installed.stat.exists
+
+- name: k3s | cluster configuration
+  include_role:
+    name: xanmanning.k3s
+    public: yes
