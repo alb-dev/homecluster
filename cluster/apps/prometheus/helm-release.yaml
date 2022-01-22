@@ -929,9 +929,9 @@ spec:
     kubeControllerManager:
       enabled: true
       endpoints: 
-       - 192.168.178.26
-       - 192.168.178.27
-       - 192.168.178.36
+       - 192.168.178.11
+       - 192.168.178.12
+       - 192.168.178.13
       service:
         enabled: true
         port: 10257
@@ -1044,9 +1044,9 @@ spec:
       ## If your etcd is not deployed as a pod, specify IPs it can be found on
       ##
       endpoints: 
-       - 192.168.178.26
-       - 192.168.178.27
-       - 192.168.178.36
+       - 192.168.178.11
+       - 192.168.178.12
+       - 192.168.178.13
 
       ## Etcd service. If using kubeEtcd.endpoints only the port and targetPort are used
       ##
@@ -1108,9 +1108,9 @@ spec:
     kubeScheduler:
       enabled: true
       endpoints: 
-       - 192.168.178.26
-       - 192.168.178.27
-       - 192.168.178.36
+       - 192.168.178.11
+       - 192.168.178.12
+       - 192.168.178.13
       service:
         enabled: true
         port: 10259
@@ -1125,9 +1125,9 @@ spec:
       ## If your kube proxy is not deployed as a pod, specify IPs it can be found on
       ##
       endpoints: 
-       - 192.168.178.26
-       - 192.168.178.27
-       - 192.168.178.36
+       - 192.168.178.11
+       - 192.168.178.12
+       - 192.168.178.13
 
       service:
         enabled: true
