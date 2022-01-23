@@ -19,7 +19,7 @@ variable "common" {
 variable "masters" {
   type = map(map(string))
   default = {
-    k8s-master01 = {
+    k8s-cp01 = {
       id          = 4010
       cidr        = "192.168.178.11/24"
  #     ceph_cidr   = "10.75.33.40/24"
@@ -29,7 +29,7 @@ variable "masters" {
       disk        = "50G"
       target_node = "pve-01"
     },
-    k8s-master02 = {
+    k8s-cp02 = {
       id          = 4011
       cidr        = "192.168.178.12/24"
 #      ceph_cidr   = "10.75.33.41/24"
@@ -39,7 +39,7 @@ variable "masters" {
       disk        = "50G"
       target_node = "pve-02"
     },
-    k8s-master03 = {
+    k8s-cp03 = {
       id          = 4012
       cidr        = "192.168.178.13/24"
 #      ceph_cidr   = "10.75.33.42/24"
@@ -54,39 +54,30 @@ variable "masters" {
 variable "workers" {
   type = map(map(string))
   default = {
-    k8s-worker01 = {
+    k8s-wk01 = {
       id          = 4020
       cidr        = "192.168.178.14/24"
-      cores       = 4
+      cores       = 6
       gw          = "192.168.178.1"
-      memory      = 8192
+      memory      = 12288
       disk        = "50G"
       target_node = "pve-01"
     },
-    k8s-worker02 = {
+    k8s-wk02 = {
       id          = 4021
       cidr        = "192.168.178.15/24"
-      cores       = 4
+      cores       = 6
       gw          = "192.168.178.1"
-      memory      = 8192
-      disk        = "50G"
-      target_node = "pve-01"
-    },
-    k8s-worker03 = {
-      id          = 4022
-      cidr        = "192.168.178.16/24"
-      cores       = 4
-      gw          = "192.168.178.1"
-      memory      = 8192
+      memory      = 12288
       disk        = "50G"
       target_node = "pve-02"
     },
-    k8s-worker04 = {
-      id          = 4023
-      cidr        = "192.168.178.233/24"
-      cores       = 4
+    k8s-wk03 = {
+      id          = 4022
+      cidr        = "192.168.178.16/24"
+      cores       = 6
       gw          = "192.168.178.1"
-      memory      = 8192
+      memory      = 12288
       disk        = "50G"
       target_node = "pve-02"
     },

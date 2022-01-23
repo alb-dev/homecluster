@@ -23,7 +23,7 @@ spec:
       tag: ""
       pullPolicy: IfNotPresent
     deployment:
-      kind: Deployment
+      kind: StatefulSet
 #### Nur eine Instanz Augrund der Let's Encrypt challange
       replicas: 1
     service:
