@@ -17,9 +17,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    cluster:
-      name: homecluster
-      id: 1
+  #  cluster:
+  #    name: homecluster
+  #    id: 1
     rollOutCiliumPods: true
     localRedirectPolicy: true
     kubeProxyReplacement: "strict"
