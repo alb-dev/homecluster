@@ -6,4 +6,4 @@ resources:
 - metrics-server
 - intel-gpu-plugin
 #- node-feature-discovery
-#- cilium
+- cilium
