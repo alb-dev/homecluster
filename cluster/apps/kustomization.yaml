@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - jellyfin
 - home
-#- system-upgrade
+- system-upgrade
 - prometheus
 - vaultwarden
 - uptime-kuma

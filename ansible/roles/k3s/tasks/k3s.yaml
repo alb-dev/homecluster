@@ -1,5 +1,3 @@
-- import_tasks: k3s.yml
-
 - name: addons | check if cluster is installed
   ansible.builtin.stat:
     path: "/etc/rancher/k3s/config.yaml"

@@ -11,7 +11,7 @@ k3s_server:
   node-ip: "{{ ansible_host }}"
   tls-san:
     # # kube-vip
-    - "{{ kubevip_address }}"
+    - 192.168.178.10
     # haproxy
     #- "{{ k3s_registration_address }}"
   docker: false
@@ -26,9 +26,9 @@ k3s_server:
   disable-cloud-controller: true
   write-kubeconfig-mode: "644"
   # Network CIDR to use for pod IPs
-  cluster-cidr: "{{ cluster-pod-cidr }}"
+  cluster-cidr: "172.22.0.0/16"
   # Network CIDR to use for service IPs
-  service-cidr: "{{ cluster-service-cidr}}"
+  service-cidr: "172.24.0.0/16"
   # Required to monitor component with kube-prometheus-stack
   etcd-expose-metrics: true
   kubelet-arg:

@@ -5,5 +5,5 @@ resources:
 - metallb-system
 - nfs-provisioner
 - traefik
-#- system-upgrade
+- system-upgrade
 - kube-system
