@@ -3966,8 +3966,13 @@ spec:
             port: healthz
         resources:
           limits:
+<<<<<<< HEAD
             cpu: 2000m
             memory: 5Gi
+=======
+            cpu: 1000m
+            memory: 1Gi
+>>>>>>> 25564e4a4ab474e80994c481a69dc18cf74f275b
           requests:
             cpu: 100m
             memory: 64Mi
@@ -4046,8 +4051,13 @@ spec:
             port: healthz
         resources:
           limits:
+<<<<<<< HEAD
             cpu: 2000m
             memory: 5Gi
+=======
+            cpu: 1000m
+            memory: 1Gi
+>>>>>>> 25564e4a4ab474e80994c481a69dc18cf74f275b
           requests:
             cpu: 100m
             memory: 64Mi
@@ -4133,8 +4143,13 @@ spec:
             port: healthz
         resources:
           limits:
+<<<<<<< HEAD
             cpu: 2000m
             memory: 5Gi
+=======
+            cpu: 1000m
+            memory: 1Gi
+>>>>>>> 25564e4a4ab474e80994c481a69dc18cf74f275b
           requests:
             cpu: 100m
             memory: 64Mi
@@ -4220,8 +4235,13 @@ spec:
             port: http
         resources:
           limits:
+<<<<<<< HEAD
             cpu: 2000m
             memory: 5Gi
+=======
+            cpu: 1000m
+            memory: 1Gi
+>>>>>>> 25564e4a4ab474e80994c481a69dc18cf74f275b
           requests:
             cpu: 50m
             memory: 64Mi
