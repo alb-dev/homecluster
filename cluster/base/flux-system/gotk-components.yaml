@@ -3967,7 +3967,7 @@ spec:
         resources:
           limits:
             cpu: 2000m
-            memory: 5Gii
+            memory: 5Gi
           requests:
             cpu: 100m
             memory: 64Mi
@@ -4047,7 +4047,7 @@ spec:
         resources:
           limits:
             cpu: 2000m
-            memory: 5Gii
+            memory: 5Gi
           requests:
             cpu: 100m
             memory: 64Mi
@@ -4134,7 +4134,7 @@ spec:
         resources:
           limits:
             cpu: 2000m
-            memory: 5Gii
+            memory: 5Gi
           requests:
             cpu: 100m
             memory: 64Mi
@@ -4221,7 +4221,7 @@ spec:
         resources:
           limits:
             cpu: 2000m
-            memory: 5Gii
+            memory: 5Gi
           requests:
             cpu: 50m
             memory: 64Mi
