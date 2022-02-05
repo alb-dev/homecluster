@@ -4,7 +4,7 @@ resources:
 - jellyfin
 - home
 - system-upgrade
-- prometheus
+- monitoring
 - vaultwarden
 - uptime-kuma
 - minio 
