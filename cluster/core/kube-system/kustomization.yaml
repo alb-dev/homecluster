@@ -7,3 +7,4 @@ resources:
 - intel-gpu-plugin
 #- node-feature-discovery
 - cilium
+- descheduler
