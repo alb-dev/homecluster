@@ -1819,7 +1819,7 @@ spec:
         ##
         image:
           repository: quay.io/prometheus/prometheus
-          tag: v2.33.1
+          tag: v2.33.2
           sha: ""
 
         ## Tolerations for use with node taints
