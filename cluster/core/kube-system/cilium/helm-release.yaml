@@ -38,32 +38,4 @@ spec:
       rollOutPods: true
     containerRuntime:
       integration: containerd
-    hubble:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-      metrics:
-        enabled:
-          - dns:query;ignoreAAAA
-          - drop
-          - tcp
-          - flow
-          - port-distribution
-          - icmp
-          - http
-      relay:
-        enabled: true
-        rollOutPods: true
-      ui:
-        enabled: true
-        rollOutPods: true
-        ingress:
-          enabled: true
-          annotations:
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
-          hosts:
-            - "hubble.${SECRET_DOMAIN}"
-          tls:
-            - hosts:
-              - "hubble.${SECRET_DOMAIN}"
+    
