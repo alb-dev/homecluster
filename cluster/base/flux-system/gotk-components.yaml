@@ -4250,6 +4250,7 @@ spec:
         name: data
       - emptyDir: {}
         name: tmp
+<<<<<<< HEAD
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -4309,3 +4310,5 @@ spec:
       app: notification-controller
   policyTypes:
   - Ingress
+=======
+>>>>>>> a828219ea9b4ac22e5ea0e55c609fcd5751a4ed6
