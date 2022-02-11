@@ -1,5 +1,3 @@
----
-
 - name: addons | check if cluster is installed
   ansible.builtin.stat:
     path: "/etc/rancher/k3s/config.yaml"
