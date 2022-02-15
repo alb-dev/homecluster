@@ -22,8 +22,9 @@ spec:
         protocol: layer2
         addresses:
             - "${METALLB_ARP_RANGE}"
-    prometheus:
-      podMonitor:
-        enabled: true
-      prometheusRule:
-        enabled: true
+ #   prometheus:
+ #     ServiceAccount: 
+ #     podMonitor:
+ #       enabled: true
+ #     prometheusRule:
+ #       enabled: true
