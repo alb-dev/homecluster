@@ -23,9 +23,9 @@ spec:
         addresses:
             - "${METALLB_ARP_RANGE}"
 # disabeld until documentation is ready
-#    prometheus:
-#      ServiceAccount: 
-#      podMonitor:
-#        enabled: false
-#      prometheusRule:
-#        enabled: true
+    prometheus:
+      ServiceAccount: 
+      podMonitor:
+        enabled: false
+      prometheusRule:
+        enabled: false
