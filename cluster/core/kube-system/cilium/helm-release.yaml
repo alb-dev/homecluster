@@ -29,7 +29,6 @@ spec:
     loadBalancer:
       algorithm: "maglev"
     tunnel: "geneve"
-    autoDirectNodeRoutes: true
     ipam:
       operator:
        clusterPoolIPv4PodCIDRList:
