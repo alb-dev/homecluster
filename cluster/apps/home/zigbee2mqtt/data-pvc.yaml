@@ -13,4 +13,4 @@ spec:
       storage: 2048Mi
   selector: 
     matchLabels: 
-     usage: homer
+     usage: zigbee2mqtt
