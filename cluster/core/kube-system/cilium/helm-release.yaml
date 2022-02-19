@@ -24,18 +24,21 @@ spec:
     localRedirectPolicy: true
     kubeProxyReplacement: "strict"
     #kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
-    nativeRoutingCIDR: 10.10.0.0/16
     k8sServiceHost: "${CLUSTER_API_IP}"
     k8sServicePort: 6443
     loadBalancer:
       algorithm: "maglev"
-      mode: "dsr"
-    tunnel: "disabled"
+    tunnel: "geneve"
     autoDirectNodeRoutes: true
     ipam:
-      mode: "kubernetes"
+      operator:
+       clusterPoolIPv4PodCIDRList:
+       - "10.10.0.0/16"
     operator:
       rollOutPods: true
+    bpf:
+     hostRouting: false 
+     masquerade: true
     containerRuntime:
       integration: containerd
     
