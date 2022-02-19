@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: zigbee2mqtt-data
+  name: pvc-zigbee2mqtt-data
   namespace: home
 spec:
-  volumeName: pv-zigbee2mqtt
-  storageClassName: "nfs-zigbee2mqtt-data"
+  volumeName: pv-zigbee2mqtt-data
+  storageClassName: nfs-zigbee2mqtt-data
   accessModes: 
   - ReadWriteOnce
   resources:
