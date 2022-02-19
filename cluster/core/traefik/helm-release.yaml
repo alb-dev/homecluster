@@ -66,6 +66,7 @@ spec:
     additionalArguments:
       - "--providers.kubernetesingress.ingressendpoint.ip=${TRAFIK_LB_IP}"
       - "--certificatesresolvers.leresolver.acme.dnschallenge=true"
+      - "--certificatesresolvers.leresolver.acme.keyType=EC256"
       - "--certificatesresolvers.leresolver.acme.dnschallenge.provider=netcup"
       - "--certificatesresolvers.leresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
       - "--certificatesresolvers.leresolver.acme.email=alexander@breidenbach.koeln"
