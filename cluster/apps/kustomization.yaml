@@ -9,5 +9,5 @@ resources:
 - uptime-kuma
 - minio 
 - paperless
-- adguard
+#- adguard
 #- falco-system
