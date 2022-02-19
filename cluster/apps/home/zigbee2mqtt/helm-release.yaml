@@ -24,6 +24,7 @@ spec:
         pullPolicy: IfNotPresent
       env:
         ZIGBEE2MQTT_DATA: /data
+        TZ: "Europe/Berlin"
       service:
         main:
           ports:
