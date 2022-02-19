@@ -5,6 +5,7 @@ metadata:
   namespace: flux-system
   name: cluster-settings
 data:
+  TIMEZONE: "Europe/Berlin"
   METALLB_ARP_RANGE: "192.168.178.241-192.168.178.251"
   CLUSTER_API_IP: "192.168.178.11"
  # CLUSTER_API_IP: "192.168.178.10"
