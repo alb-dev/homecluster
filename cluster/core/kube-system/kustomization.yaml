@@ -4,7 +4,7 @@ resources:
 #- kube-vip
 - kured
 - metrics-server
-- intel-gpu-plugin
+#- intel-gpu-plugin
 #- node-feature-discovery
 - cilium
 - descheduler
