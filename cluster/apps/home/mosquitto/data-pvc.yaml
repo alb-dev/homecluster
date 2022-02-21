@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-mosquitto-data
+  namespace: home
+spec:
+  volumeName: pv-mosquitto-data
+  storageClassName: nfs-mosquitto-data
+  accessModes: 
+  - ReadWriteOnce
+  resources:
+     requests: 
+      storage: 100Mi
+  selector: 
+    matchLabels: 
+     usage: mosquitto
