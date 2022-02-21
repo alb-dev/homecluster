@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - homer
 - home-assistant
-#- zigbee2mqtt
+- zigbee2mqtt
