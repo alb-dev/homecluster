@@ -81,7 +81,7 @@ spec:
         permit_join: true
         mqtt:
           base_topic: zigbee2mqtt
-          server: "mqtt://localhost"
+          server: "mqtt://mosquitto"
           include_device_information: true
         serial:
         advanced:
