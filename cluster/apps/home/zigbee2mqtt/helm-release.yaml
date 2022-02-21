@@ -84,7 +84,7 @@ spec:
           server: "mqtt://mosquitto"
           include_device_information: true
         serial:
-          port: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
+         port: /dev/ttyACM0
         advanced:
           network_key: GENERATE
           log_output:
