@@ -4,3 +4,4 @@ resources:
 - homer
 - home-assistant
 - zigbee2mqtt
+- mosquitto
