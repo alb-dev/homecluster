@@ -1419,7 +1419,7 @@ spec:
       ##
       image:
         repository: quay.io/prometheus-operator/prometheus-operator
-        tag: v0.54.0
+        tag: v0.54.1
         sha: ""
         pullPolicy: IfNotPresent
 
