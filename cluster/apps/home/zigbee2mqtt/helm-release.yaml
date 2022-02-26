@@ -53,7 +53,6 @@ spec:
         limits:
           memory: 500Mi
       securityContext:
-        # -- (bool) Privileged securityContext may be required if USB controller is accessed directly through the host machine
         privileged: true
       persistence:
         data:
@@ -65,22 +64,12 @@ spec:
           type: hostPath
           hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
           mountPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
-          hostPathType:
+          hostPathType: CharDevice
       affinity: {}
-      # -- zigbee2mqtt configuration settings.
-      # This will be copied into the container's persistent storage at first run only.
-      # Further configuration should be done in the application itself!
-      # See [project documentation](https://www.zigbee2mqtt.io/information/configuration.html) for more information.
-      # @default -- See values.yaml
       config:
-        # These will be applied ONLY on first run
-        # Home Assistant integration (MQTT discovery)
         homeassistant: true
         device_options:
           retain: true
-        # allow new devices to join
-        # WARNING: Disable this after all devices have been paired! (default: false)
-        # Note: this will be controllable in the UI
         permit_join: false
         mqtt:
           base_topic: zigbee2mqtt
@@ -89,7 +78,7 @@ spec:
         serial:
          port: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
         advanced:
-          network_key: GENERATE
+          network_key: [7, 3, 5, 7, 9, 11, 13, 15, 0, 2, 4, 6, 8, 11, 12, 13]
           log_output:
             - console
           log_level: info
