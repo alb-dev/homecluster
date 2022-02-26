@@ -65,7 +65,12 @@ spec:
           hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
           mountPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
           hostPathType: CharDevice
-      affinity: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - {key: "feature.node.kubernetes.io/custom-zigbee", operator: In, values: ["true"]}
       config:
         homeassistant: true
         device_options:
