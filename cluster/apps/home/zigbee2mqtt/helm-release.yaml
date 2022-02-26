@@ -64,6 +64,7 @@ spec:
           enabled: true
           type: hostPath
           hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
+          mountPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
       affinity: {}
       # -- zigbee2mqtt configuration settings.
       # This will be copied into the container's persistent storage at first run only.
