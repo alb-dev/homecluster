@@ -81,11 +81,5 @@ spec:
           network_key: [7, 3, 5, 7, 9, 11, 13, 15, 0, 2, 4, 6, 8, 11, 12, 13]
           log_output:
             - console
-          log_level: info
-          last_seen: 'ISO_8601'
-          homeassistant_discovery_topic: 'homeassistant'
-          homeassistant_status_topic: 'homeassistant/status'
         frontend:
           port: 8080
-        experimental:
-          new_api: true
