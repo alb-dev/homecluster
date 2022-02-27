@@ -17,26 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    image:
-      # repository: raspbernetes/node-feature-discovery
-      # tag: "v0.8.1"
-      pullPolicy: IfNotPresent
-    master:
-      tolerations:
-      - key: "node-role.kubernetes.io/master"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
-      affinity:
-        nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: "node-role.kubernetes.io/master"
-                operator: In
-                values: [""]
-    # node-feature-discovery configuration - see https://github.com/kubernetes-sigs/node-feature-discovery/blob/master/nfd-worker.conf.example for example
+    nodeFeatureRule:
+      createCRD: true
     worker:
       config: #|-
         core:
@@ -48,11 +30,6 @@ spec:
           usb:
             deviceClassWhitelist:
             - "02"
-            - "03"
-            - "0e"
-            - "ef"
-            - "fe"
-            - "ff"
             deviceLabelFields:
             - "class"
             - "vendor"
@@ -61,52 +38,6 @@ spec:
           - name: "zigbee"
             matchOn:
             - usbId:
-              class: ["ff"]
-              vendor: ["1a86"]
-              device: ["7523"]
-          - name: "zwave"
-            matchOn:
-            - usbId:
               class: ["02"]
-              vendor: ["0658"]
-              device: ["0200"]
-          - name: "cyberpower-ups"
-            matchOn:
-            - usbId:
-              class: ["00"]
-              vendor: ["0746"]
-              device: ["0501"]
-          # - name: "3dprinter-mpsm"
-          #   matchOn:
-          #   - usbId:
-          #     class: ["02"]
-          #     vendor: ["2974"]
-          #     device: ["0503"]
-          - name: "3dprinter-ender"
-            matchOn:
-            - usbId:
-              class: ["02"]
-              vendor: ["0483"]
-              device: ["5740"]
-          - name: "webcam-c270"
-            matchOn:
-            - usbId:
-              class: ["ef"]
-              vendor: ["046d"]
-              device: ["0825"]
-          - name: "canon-dslr"
-            matchOn:
-            - usbId:
-              class: ["00"]
-              vendor: ["04a9"]
-              device: ["317b"]
-          - name: 'coral-tpu'
-            matchOn:
-              - pciId:
-                  vendor: ['1ac1']
-                  device: ['089a']
-      tolerations:
-      - effect: "NoExecute"
-        operator: "Exists"
-      - effect: "NoSchedule"
-        operator: "Exists"
+              vendor: ["1cf1"]
+              device: ["0030"]
