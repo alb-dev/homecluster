@@ -13,14 +13,19 @@ spec:
       version: 0.10.1
       sourceRef:
         kind: HelmRepository
-        name: node-feature-discovery-charts
+        name: kubernetes-sigs
         namespace: flux-system
+      interval: 5m
   values:
+    image:
+      # repository: raspbernetes/node-feature-discovery
+      # tag: "v0.8.1"
+      pullPolicy: IfNotPresent
     master:
       tolerations:
       - key: "node-role.kubernetes.io/master"
         operator: "Equal"
-        value: ""
+        value: "true"
         effect: "NoSchedule"
       affinity:
         nodeAffinity:
@@ -31,8 +36,9 @@ spec:
               - key: "node-role.kubernetes.io/master"
                 operator: In
                 values: [""]
+    # node-feature-discovery configuration - see https://github.com/kubernetes-sigs/node-feature-discovery/blob/master/nfd-worker.conf.example for example
     worker:
-      config: |-
+      config: #|-
         core:
           sources:
           - custom
@@ -52,35 +58,53 @@ spec:
             - "vendor"
             - "device"
           custom:
-          - name: "zwave"
-            matchOn:
-            - usbId:
-                class: ["02"]
-                vendor: ["0658"]
-                device: ["0200"]
-          - name: "intel-gpu"
-            matchOn:
-            - pciId:
-                class: ["0300"]
-                vendor: ["8086"]
-          - name: "coral-tpu"
-            matchOn:
-            - usbId:
-                vendor: ["1a6e", "18d1"]
-          - name: "flight-aware"
-            matchOn:
-            - usbId:
-                class: ["ff"]
-                vendor: ["0bda"]
-                device: ["2832"]
           - name: "zigbee"
             matchOn:
             - usbId:
-                class: ["ff"]
-                vendor: ["1a86"]
-                device: ["7523"]
-      annotations:
-        configmap.reloader.stakater.com/reload: "nfd-worker-conf"
+              class: ["ff"]
+              vendor: ["1a86"]
+              device: ["7523"]
+          - name: "zwave"
+            matchOn:
+            - usbId:
+              class: ["02"]
+              vendor: ["0658"]
+              device: ["0200"]
+          - name: "cyberpower-ups"
+            matchOn:
+            - usbId:
+              class: ["00"]
+              vendor: ["0746"]
+              device: ["0501"]
+          # - name: "3dprinter-mpsm"
+          #   matchOn:
+          #   - usbId:
+          #     class: ["02"]
+          #     vendor: ["2974"]
+          #     device: ["0503"]
+          - name: "3dprinter-ender"
+            matchOn:
+            - usbId:
+              class: ["02"]
+              vendor: ["0483"]
+              device: ["5740"]
+          - name: "webcam-c270"
+            matchOn:
+            - usbId:
+              class: ["ef"]
+              vendor: ["046d"]
+              device: ["0825"]
+          - name: "canon-dslr"
+            matchOn:
+            - usbId:
+              class: ["00"]
+              vendor: ["04a9"]
+              device: ["317b"]
+          - name: 'coral-tpu'
+            matchOn:
+              - pciId:
+                  vendor: ['1ac1']
+                  device: ['089a']
       tolerations:
       - effect: "NoExecute"
         operator: "Exists"
