@@ -64,7 +64,7 @@ spec:
           type: hostPath
           hostPath: /dev/ttyACM0
           mountPath: /dev/ttyACM0
-          hostPathType: CharDevice
+       #   hostPathType: CharDevice
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
