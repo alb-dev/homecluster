@@ -62,8 +62,8 @@ spec:
         usb:
           enabled: true
           type: hostPath
-          hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
-          mountPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
+          hostPath: /dev/ttyACM0
+          mountPath: /dev/ttyACM0
           hostPathType: CharDevice
       affinity:
         nodeAffinity:
@@ -81,7 +81,7 @@ spec:
           server: "mqtt://mosquitto"
           include_device_information: true
         serial:
-         port: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2486924-if00
+         port: /dev/ttyACM0
         advanced:
           network_key: [7, 3, 5, 7, 9, 11, 13, 15, 0, 2, 4, 6, 8, 11, 12, 13]
           pan_id: 6652
