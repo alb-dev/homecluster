@@ -73,7 +73,6 @@
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor"],
-      "automerge": true,
       "labels": ["renovate/image", "dep/minor"]
     },
     {
@@ -89,7 +88,6 @@
     {
       "matchDatasources": ["helm"],
       "matchUpdateTypes": ["minor"],
-      "automerge": true,
       "labels": ["renovate/helm", "dep/minor"]
     },
     {
