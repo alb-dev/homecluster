@@ -79,7 +79,8 @@ spec:
         mqtt:
           base_topic: zigbee2mqtt
           server: "mqtt://mosquitto"
-          include_device_information: true
+          user: "${SECRET_MQTT_USERNAME}"
+          password: "${SECRET_MQTT_PASSWORD}"
         serial:
          port: /dev/ttyACM0
         advanced:
