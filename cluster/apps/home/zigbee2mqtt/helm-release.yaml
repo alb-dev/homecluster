@@ -63,6 +63,7 @@ spec:
           enabled: true
           type: hostPath
           hostPath: /dev/ttyACM0
+          mountPath: /dev/ttyACM0
           hostPathType: CharDevice
       affinity:
         nodeAffinity:
