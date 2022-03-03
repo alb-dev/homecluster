@@ -6,4 +6,5 @@ resources:
   - data-pv.yaml 
   - data-pvc.yaml
   - helm-release.yaml
+  - secret.sops.yaml
 
