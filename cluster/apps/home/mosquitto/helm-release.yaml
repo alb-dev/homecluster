@@ -40,4 +40,7 @@ spec:
         existingClaim: pvc-mosquitto-data
       configinc:
         enabled: true
-        existingClaim: pvc-mosquitto-config
+        type: custom
+        volumeSpec:
+          secret:
+            secretName: mosquitto
