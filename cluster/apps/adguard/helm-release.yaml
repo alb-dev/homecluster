@@ -42,7 +42,7 @@ spec:
         # -- image repository
         repository: adguard/adguardhome
         # -- image tag
-        tag: v0.107.4
+        tag: v0.107.5
         # -- image pull policy
         pullPolicy: IfNotPresent
 
