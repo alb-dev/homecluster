@@ -7,7 +7,7 @@ resources:
 - monitoring
 - vaultwarden
 - uptime-kuma
-- minio 
+#- minio 
 - paperless
 #- adguard
 #- falco-system
