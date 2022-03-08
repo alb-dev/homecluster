@@ -29,7 +29,7 @@ spec:
       main:
         type: LoadBalancer
         loadBalancerIP: "${SVC_HASS_IP}"
-        externalTrafficPolicy: Local
+  #      externalTrafficPolicy: Local
  #       ports:
  #         http:
  #           port: 8123
