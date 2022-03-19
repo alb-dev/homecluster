@@ -16,3 +16,4 @@ resources:
 - falco-system.yaml
 - home.yaml
 - rook-ceph.yaml
+- kasten-io.yaml
