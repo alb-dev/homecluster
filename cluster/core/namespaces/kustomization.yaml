@@ -15,4 +15,4 @@ resources:
 - adguard.yaml
 - falco-system.yaml
 - home.yaml
-- rook-ceph
+- rook-ceph.yaml
