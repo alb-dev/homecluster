@@ -16,3 +16,4 @@ resources:
 - coredns-charts.yaml
 - deliveryhero-charts.yaml
 - descheduler-charts.yaml
+- rook-ceph-charts.yaml
