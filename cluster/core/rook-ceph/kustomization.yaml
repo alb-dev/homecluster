@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
 - ceph-cluster
 - rook-operator
-- snapshot-controller
