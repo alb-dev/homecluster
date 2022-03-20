@@ -12,7 +12,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: nfs-jellyfin-cache
   mountOptions:
     - hard
     - nfsvers=4.1

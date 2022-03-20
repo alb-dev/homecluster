@@ -5,7 +5,6 @@ metadata:
   namespace: jellyfin
 spec:
   volumeName: pv-jellyfin-config
-  storageClassName: "nfs-jellyfin-config"
   accessModes: 
   - ReadWriteOnce
   resources:
