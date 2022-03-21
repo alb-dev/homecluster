@@ -232,10 +232,10 @@ spec:
             traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
             traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
         hosts:
-          - &host "alert-manager.${SECRET_DOMAIN}"
+          - "alertmanager.${SECRET_DOMAIN}"
         tls:
           - hosts:
-              - *host
+              - alertmanager.${SECRET_DOMAIN}
       secret:
         annotations: {}
       alertmanagerSpec:
@@ -416,6 +416,9 @@ spec:
             traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
         hosts:
             - "grafana.${SECRET_DOMAIN}"
+        tls: 
+         - hosts:
+            - grafana.${SECRET_DOMAIN}
       sidecar:
         dashboards:
           enabled: true
@@ -967,10 +970,10 @@ spec:
             traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
             traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
           hosts:
-            - &host "prometheus.${SECRET_DOMAIN}"
+            - "prometheus.${SECRET_DOMAIN}"
           tls:
             - hosts:
-                - *host
+                - prometheus.${SECRET_DOMAIN}
         thanosService:
           enabled: true
         thanosServiceMonitor:
