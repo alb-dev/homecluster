@@ -36,29 +36,6 @@
       "cluster/.+/gotk-components\\.ya?ml$"
     ]
   },
-  "regexManagers": [
-    // regexManager to read and process HelmRelease files
-    {
-      "fileMatch": [
-        "cluster/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        // helm releases
-        "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
-      ],
-      "datasourceTemplate": "helm"
-    },
-    // regexManager to read and process Traefik CRD's
-    {
-      "fileMatch": [
-        "cluster/crds/traefik/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n *tag: v(?<currentValue>.*)\n"
-      ],
-      "datasourceTemplate": "helm"
-    }
-  ],
   "packageRules": [
     // setup datasources
     {
