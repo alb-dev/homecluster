@@ -35,11 +35,11 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
         host:
-          name: &host "ceph.${SECRET_DOMAIN}"
+          name: "ceph.${SECRET_DOMAIN}"
           path: "/"
         tls:
           - hosts:
-              - *host
+              - ceph.${SECRET_DOMAIN}
     cephClusterSpec:
       placement:
         all:
