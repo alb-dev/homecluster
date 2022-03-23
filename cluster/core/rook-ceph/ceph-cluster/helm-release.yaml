@@ -71,11 +71,11 @@ spec:
           - name: "wk-2"
             devices:
               - name: "sdb"
-    cephBlockPoolsVolumeSnapshotClass:
-      enabled: true
-      name: csi-rbdplugin-snapclass
-      annotations:
-        k10.kasten.io/is-snapshot-class: "true"
+#    cephBlockPoolsVolumeSnapshotClass:
+#      enabled: true
+#      name: csi-rbdplugin-snapclass
+#      annotations:
+#        k10.kasten.io/is-snapshot-class: "true"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
