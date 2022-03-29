@@ -24,52 +24,50 @@
       "cluster/.+\\.ya?ml$"
     ]
   },
+  "helmv3": {
+    "fileMatch": [
+      "charts/.+/Chart\\.ya?ml$"
+    ]
+  },
   "kubernetes": {
     "fileMatch": [
       "cluster/.+\\.ya?ml$"
     ]
   },
   "regexManagers": [
-    // regexManager to read and process HelmRelease files
+    // Read and process GitHub Releases
+    {
+      "fileMatch": [
+        "cluster/.+\\.ya?ml$",
+        "ansible/.+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?)\n *url: https:\/\/github\\.com\/(?<depName>.*?)\\.git\n *ref:\n *tag: (?<currentValue>.*)\n",
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)\n.*?_version: \"(?<currentValue>.*)\"\n",
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)\n.*?_VERSION=\"(?<currentValue>.*)\"\n"
+      ],
+      "datasourceTemplate": "github-releases"
+    },
+    // Read and process Custom Resource Definitions
     {
       "fileMatch": [
         "cluster/.+\\.ya?ml$"
       ],
       "matchStrings": [
-        // helm releases
-        "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
-      ],
-      "datasourceTemplate": "helm"
-    },
-    // regexManager to read and process kube-prometheus-stack CRD's
-    {
-      "fileMatch": [
-        "cluster/crds/kube-prometheus-stack/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
+        "registryUrl=(?<registryUrl>.*?)\n *tag: (?<depName>[a-zA-Z-]+)-(?<currentValue>.*)\n",
         "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n.*\\/(?<currentValue>.*?)\\/"
       ],
       "datasourceTemplate": "helm"
     },
-    // regexManager to read and process Traefik CRD's
+    // Read and process Custom Resources
     {
       "fileMatch": [
-        "cluster/crds/traefik/.+\\.ya?ml$"
+        "cluster/.+\\.ya?ml$"
       ],
       "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n *tag: v(?<currentValue>.*)\n"
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)\n .*: (?<currentValue>.*=?)"
       ],
-      "datasourceTemplate": "helm"
-    },
-    // regexManager to read and process external snapshotter CRD's
-    {
-      "fileMatch": [
-        "cluster/crds/external-snapshotter/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n *tag: v(?<currentValue>.*)\n"
-      ],
-      "datasourceTemplate": "helm"
+      "datasourceTemplate": "docker"
     }
   ],
   "packageRules": [
