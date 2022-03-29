@@ -8,7 +8,7 @@ spec:
   interval: 30m
   url: https://github.com/prometheus-community/helm-charts.git
   ref:
-    tag: kube-prometheus-stack-34.5.0
+    tag: kube-prometheus-stack-34.5.1
   ignore: |
     # exclude all
     /*
