@@ -38,7 +38,7 @@ spec:
     #  existingClaim: ""
       accessMode: ReadWriteMany
       size: 128Mi
-      storageClass: "nfs-client"
+      storageClass: "ceph-block"
       path: /data
       annotations: {}
     logs:
@@ -60,7 +60,7 @@ spec:
       - "--providers.kubernetesingress.ingressclass=traefik"
       - "--metrics.prometheus=true"
       - "--metrics.prometheus.entryPoint=metrics"
-      - "--entryPoints.websecure.forwardedHeaders.trustedIPs=10.10.0.0/16"
+      - "--entryPoints.websecure.forwardedHeaders.trustedIPs=10.0.0.0/8"
     additionalArguments:
       - "--providers.kubernetesingress.ingressendpoint.ip=${TRAFIK_LB_IP}"
       - "--certificatesresolvers.leresolver.acme.keytype=EC256"

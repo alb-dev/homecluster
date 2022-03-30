@@ -1,5 +1,0 @@
-# Cluster Networking
-kubevip_address: "192.168.178.10"
-cluster-service-cidr: "10.69.0.0/16"
-cluster-pod-cidr: "10.96.0.0/16"
-k3s_etcd_s3: false

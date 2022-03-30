@@ -1,0 +1,45 @@
+---
+
+- name: Create the RKE2 config dir
+  ansible.builtin.file:
+    state: directory
+    path: /etc/rancher/rke2
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy kubeconfig
+  ansible.builtin.template:
+    src: "{{ rke2_config }}"
+    dest: /etc/rancher/rke2/config.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Copy Containerd Registry Configuration file
+  ansible.builtin.template:
+    src: "{{ rke2_custom_registry_path }}"
+    dest: /etc/rancher/rke2/registries.yaml
+    owner: root
+    group: root
+    mode: 0644
+  when: rke2_custom_registry_mirrors.0.endpoint | length > 0
+
+- name: Start RKE2 service on the first server
+  ansible.builtin.systemd:
+    name: "rke2-server.service"
+    state: started
+    enabled: true
+  environment:
+    RKE2_TOKEN: "{{ rke2_token }}"
+
+- name: Mask RKE2 agent service on the first server
+  ansible.builtin.systemd:
+    name: "rke2-agent.service"
+    enabled: false
+    masked: true
+
+- name: Set an Active Server variable
+  ansible.builtin.set_fact:
+    active_server: "{{ inventory_hostname }}"
+  run_once: yes

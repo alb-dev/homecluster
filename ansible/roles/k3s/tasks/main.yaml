@@ -1,8 +1,0 @@
----
-- import_tasks: k3s.yaml
-
-- import_tasks: addon.yaml
-
-- import_tasks: cleanup.yaml
-
-- import_tasks: kubeconfig.yaml

@@ -1,0 +1,47 @@
+---
+
+- name: Create the RKE2 config dir
+  ansible.builtin.file:
+    state: directory
+    path: /etc/rancher/rke2
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy RKE2 config
+  ansible.builtin.template:
+    src: "{{ rke2_config }}"
+    dest: /etc/rancher/rke2/config.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Copy Containerd Registry Configuration file
+  ansible.builtin.template:
+    src: "{{ rke2_custom_registry_path }}"
+    dest: /etc/rancher/rke2/registries.yaml
+    owner: root
+    group: root
+    mode: 0644
+  when: rke2_custom_registry_mirrors.0.endpoint | length > 0
+
+- name: Start RKE2 service on the server node
+  ansible.builtin.systemd:
+    name: "rke2-{{ rke2_type }}.service"
+    state: started
+    enabled: true
+  environment:
+    RKE2_TOKEN: "{{ rke2_token }}"
+
+- name: Wait for the RKE2 server to be ready
+  ansible.builtin.shell: |
+   set -o pipefail
+   /var/lib/rancher/rke2/bin/kubectl --kubeconfig /etc/rancher/rke2/rke2.yaml get nodes | grep "{{ ansible_hostname }}"
+  args:
+    executable: /bin/bash
+  changed_when: false
+  register: first_server
+  until:
+    - '" Ready "  in first_server.stdout'
+  retries: 40
+  delay: 15

@@ -3,8 +3,8 @@ kind: Kustomization
 resources:
 #- kube-vip
 - kured
-- metrics-server
+#- metrics-server
 #- intel-gpu-plugin
 - node-feature-discovery
-- cilium
+#- cilium
 - descheduler

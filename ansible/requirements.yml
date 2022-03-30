@@ -1,6 +1,5 @@
 ---
 roles:
-- src: xanmanning.k3s
-  version: v3.1.1
+- src: lablabs.rke2
 collections:
 - name: community.general

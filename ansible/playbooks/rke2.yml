@@ -1,0 +1,29 @@
+--- 
+- name: Deploy RKE2
+  hosts: all
+  become: true
+  vars: 
+    rke2_download_kubeconf: true
+    rke2_version: v1.23.4+rke2r1
+    rke2_cni: canal 
+    rke2_token: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          39306630336265643062636137633631383535626132353333306139383466663435663866306162
+          3864376334666531393339356465353732306532353038310a383062386561306530323634663564
+          62353464303536633739366632386262396463353630346237616638353737653535663530333739
+          6636643634663335370a323737666637316362313336316235643739656163373961336165626563
+          63363666316565303031363231643961396532623866373434386534343030383033
+    rke2_additional_sans: 
+      - 192.168.178.11 
+      - cluster.intern.breidenbach.koeln 
+    rke2_disable:
+      - rke2-ingress-nginx 
+    rke2_server_options: 
+      - "etcd-expose-metrics: true"
+      - "etcd-snapshot-rentention: 20"
+      - "disbale-cloud-controller: true"
+      - "cluster-cidr: 10.16.0.0/16"
+      - "service-cidr: 10.17.0.0/16"
+      - "cluster-dns: 10.17.0.10"
+  roles:
+     - role: lablabs.rke2
