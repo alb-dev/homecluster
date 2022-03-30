@@ -812,22 +812,6 @@ spec:
     kubeEtcd:
       enabled: true
 
-      ## If your etcd is not deployed as a pod, specify IPs it can be found on
-      ##
-      endpoints: 
-       - 192.168.178.11
-       - 192.168.178.12
-       - 192.168.178.13
-
-      ## Etcd service. If using kubeEtcd.endpoints only the port and targetPort are used
-      ##
-      service:
-        enabled: true
-        port: 2379
-        targetPort: 2379
-        # selector:
-        #   component: etcd
-
       ## Configure secure access to the etcd cluster by loading a secret into prometheus and
       ## specifying security configuration below. For example, with a secret named etcd-client-cert
       ##
@@ -878,35 +862,12 @@ spec:
     ##
     kubeScheduler:
       enabled: true
-      endpoints: 
-       - 192.168.178.11
-       - 192.168.178.12
-       - 192.168.178.13
-      service:
-        enabled: true
-        port: 10259
-        targetPort: 10259
       serviceMonitor:
         enabled: true
         https: true
         insecureSkipVerify: true
     kubeProxy:
       enabled: true
-
-      ## If your kube proxy is not deployed as a pod, specify IPs it can be found on
-      ##
-      endpoints: 
-       - 192.168.178.11
-       - 192.168.178.12
-       - 192.168.178.13
-
-      service:
-        enabled: true
-        port: 10249
-        targetPort: 10249
-        # selector:
-        #   k8s-app: kube-proxy
-
       serviceMonitor:
         enabled: true
         ## Scrape interval. If not set, the Prometheus default scrape interval is used.
