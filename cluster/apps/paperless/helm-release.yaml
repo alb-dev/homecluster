@@ -121,6 +121,6 @@ spec:
     redis:
       enabled: true
       global:
-        storageClass: "nfs-client"
+        storageClass: "ceph-block"
       auth:
         enabled: false
