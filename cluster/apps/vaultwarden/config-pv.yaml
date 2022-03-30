@@ -12,6 +12,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-vaultwarden
   mountOptions:
     - hard
     - nfsvers=3

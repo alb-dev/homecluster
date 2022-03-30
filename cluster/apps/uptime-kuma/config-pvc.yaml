@@ -5,7 +5,7 @@ metadata:
   namespace: uptime-kuma
 spec:
   volumeName: pv-uptime-kuma
-  #storageClassName: "nfs-uptime-kuma"
+  storageClassName: "nfs-uptime-kuma"
   accessModes: 
   - ReadWriteOnce
   resources:

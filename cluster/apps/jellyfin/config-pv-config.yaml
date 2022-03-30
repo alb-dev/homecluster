@@ -12,7 +12,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  #storageClassName: nfs-jellyfin-config
+  storageClassName: nfs-jellyfin-config
   mountOptions:
     - hard
     - nfsvers=4.1
