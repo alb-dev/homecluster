@@ -28,7 +28,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: Molecule for Ansible
-        uses: robertdebock/molecule-action@2.7.2
+        uses: robertdebock/molecule-action@4.0.7
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
@@ -50,7 +50,7 @@ jobs:
         with:
           path: "${{ github.repository }}"
       - name: Molecule for Ansible
-        uses: robertdebock/molecule-action@2.7.2
+        uses: robertdebock/molecule-action@4.0.7
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
