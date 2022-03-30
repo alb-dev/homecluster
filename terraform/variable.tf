@@ -12,7 +12,7 @@ variable "common" {
     os_type       = "cloud-init"
     clone         = "linux-alma-server-8"
     search_domain = "intern.breidenbach.koeln"
-    nameserver    = "192.168.178.4"
+    nameserver    = "192.168.178.10"
   }
 }
 
@@ -23,7 +23,7 @@ variable "masters" {
       id          = 4010
       cidr        = "192.168.178.12/24"
       cores       = 4
-      gw          = "192.168.178.10"
+      gw          = "192.168.178.1"
       memory      = 8192
       disk0        = "50G"
       disk1        = "60G"
@@ -58,7 +58,7 @@ variable "workers" {
       id          = 4020
       cidr        = "192.168.178.13/24"
       cores       = 6
-      gw          = "192.168.178.10"
+      gw          = "192.168.178.1"
       memory      = 12288
       disk0        = "50G"
       disk1        = "60G"
@@ -68,7 +68,7 @@ variable "workers" {
       id          = 4021
       cidr        = "192.168.178.14/24"
       cores       = 6
-      gw          = "192.168.178.10"
+      gw          = "192.168.178.1"
       memory      = 12288
       disk0        = "50G"
       disk1        = "60G"
