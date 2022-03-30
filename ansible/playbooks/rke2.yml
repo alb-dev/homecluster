@@ -19,8 +19,8 @@
       - "etcd-expose-metrics: true"
       - "etcd-snapshot-rentention: 20"
       - "disable-cloud-controller: true"
-      - "cluster-cidr: 10.16.0.0/16"
-      - "service-cidr: 10.17.0.0/16"
+      - "cluster-cidr: 10.20.0.0/16"
+      - "service-cidr: 10.21.0.0/16"
       - "cluster-dns: 10.17.0.10"
   roles:
      - role: lablabs.rke2
