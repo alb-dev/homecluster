@@ -1,29 +1,27 @@
----
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
-  name: k3s-agent
+  name: agent-plan
   namespace: system-upgrade
   labels:
-    k3s-upgrade: agent
+    rke2-upgrade: agent
 spec:
-  serviceAccountName: system-upgrade
   concurrency: 1
-  channel: https://update.k3s.io/v1-release/channels/v1.23
-  cordon: true
+  channel: https://update.rke2.io/v1-release/channels/v1.23
   nodeSelector:
     matchExpressions:
-      - key: node-role.kubernetes.io/master
-        operator: NotIn
-        values:
-          - "true"
+      - {key: rke2-upgrade, operator: Exists}
+      - {key: rke2-upgrade, operator: NotIn, values: ["disabled", "false"]}
+      # When using k8s version 1.19 or older, swap control-plane with master
+      - {key: node-role.kubernetes.io/control-plane, operator: NotIn, values: ["true"]}
   prepare:
-    image: rancher/k3s-upgrade
     args:
-      - "prepare"
-      - "k3s-server"
+    - prepare
+    - server-plan
+    image: rancher/rke2-upgrade
+  serviceAccountName: system-upgrade
+  cordon: true
   drain:
     force: true
-    skipWaitForDeleteTimeout: 60 
   upgrade:
-    image: rancher/k3s-upgrade
+    image: rancher/rke2-upgrade

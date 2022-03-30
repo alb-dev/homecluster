@@ -1,26 +1,30 @@
----
+# Server plan
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
-  name: k3s-server
+  name: server-plan
   namespace: system-upgrade
   labels:
-    k3s-upgrade: server
+    rke2-upgrade: server
 spec:
-  serviceAccountName: system-upgrade
   concurrency: 1
-  channel: https://update.k3s.io/v1-release/channels/v1.23
- # cordon wird nicht benötigt da es nur ein Server/master in diesem Fall gibt
-  cordon: true
+  channel: https://update.rke2.io/v1-release/channels/v1.23
   nodeSelector:
     matchExpressions:
-      - key: node-role.kubernetes.io/master
-        operator: In
-        values:
-          - "true"
-  tolerations:
-      - key: node-role.kubernetes.io/master
-        operator: Exists
-        effect: NoSchedule
-  upgrade:
-    image: rancher/k3s-upgrade
+       - {key: rke2-upgrade, operator: Exists}
+       - {key: rke2-upgrade, operator: NotIn, values: ["disabled", "false"]}
+       # When using k8s version 1.19 or older, swap control-plane with master
+       - {key: node-role.kubernetes.io/control-plane, operator: In, values: ["true"]}
+  serviceAccountName: system-upgrade
+  cordon: true
+#  drain:
+#    force: true
+  tolerations: 
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists 
+      effect: NoSchedule
+    - key: CriticalAddonsOnly
+      operator: Exists 
+      effect: NoExecute 
+  upgrade:  
+    image: rancher/rke2-upgrade
