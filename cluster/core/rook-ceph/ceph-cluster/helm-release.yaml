@@ -62,13 +62,13 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: "cp-1"
+          - name: "cp-01"
             devices:
               - name: "sdb"
-          - name: "wk-1"
+          - name: "wk-01"
             devices:
               - name: "sdb"
-          - name: "wk-2"
+          - name: "wk-02"
             devices:
               - name: "sdb"
     cephBlockPoolsVolumeSnapshotClass:
