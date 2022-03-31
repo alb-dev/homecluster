@@ -9,5 +9,4 @@ resources:
 - uptime-kuma
 - kasten-io  
 - paperless
-- rancher
 #- falco-system
