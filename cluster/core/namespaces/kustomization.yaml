@@ -13,7 +13,6 @@ resources:
 - uptime-kuma.yaml
 #- minio.yaml
 - paperless.yaml
-- adguard.yaml
 - falco-system.yaml
 - home.yaml
 - rook-ceph.yaml
