@@ -10,10 +10,10 @@ spec:
   channel: https://update.rke2.io/v1-release/channels/v1.23
   nodeSelector:
     matchExpressions:
-      - {key: rke2-upgrade, operator: Exists}
-      - {key: rke2-upgrade, operator: NotIn, values: ["disabled", "false"]}
-      # When using k8s version 1.19 or older, swap control-plane with master
-      - {key: node-role.kubernetes.io/control-plane, operator: NotIn, values: ["true"]}
+      - key: node-role.kubernetes.io/master
+        operator: NotIn
+        values: 
+          - "true"
   prepare:
     args:
     - prepare
@@ -23,5 +23,6 @@ spec:
   cordon: true
   drain:
     force: true
+    skipWaitForDeleteTimeout: 240
   upgrade:
     image: rancher/rke2-upgrade
