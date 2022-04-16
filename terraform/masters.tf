@@ -8,6 +8,7 @@ resource "proxmox_vm_qemu" "kube-master" {
   vmid        = each.value.id
   memory      = each.value.memory
   cores       = each.value.cores
+  onboot      = true
   network {
     model    = "virtio"
     bridge   = "vmbr0"

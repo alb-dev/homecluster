@@ -74,5 +74,25 @@ variable "workers" {
       disk1        = "60G"
       target_node = "pve-02"
     },
+   wk-03 = {
+      id          = 4022
+      cidr        = "192.168.178.15/24"
+      cores       = 6
+      gw          = "192.168.178.1"
+      memory      = 12288
+      disk0        = "50G"
+      disk1        = "60G"
+      target_node = "pve-01"
+    },
+    wk-04 = {
+      id          = 4023
+      cidr        = "192.168.178.16/24"
+      cores       = 6
+      gw          = "192.168.178.1"
+      memory      = 12288
+      disk0        = "50G"
+      disk1        = "60G"
+      target_node = "pve-01"
+    },
   }
 }
