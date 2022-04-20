@@ -5,7 +5,7 @@ metadata:
   namespace: home
 spec:
   volumeName: pv-homer
-  storageClassName: "nfs-homer-config"
+  storageClassName: ""
   accessModes: 
   - ReadWriteOnce
   resources:

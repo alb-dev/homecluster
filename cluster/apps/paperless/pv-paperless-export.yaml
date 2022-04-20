@@ -12,7 +12,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: nfs-paperless-export
+  storageClassName: ""
   mountOptions:
     - hard
     - nfsvers=3

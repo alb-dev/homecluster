@@ -5,7 +5,7 @@ metadata:
   namespace: paperless
 spec:
   volumeName: pv-paperless-media
-  storageClassName: "nfs-paperless-media"
+  storageClassName: ""
   accessModes: 
   - ReadWriteOnce
   resources:
