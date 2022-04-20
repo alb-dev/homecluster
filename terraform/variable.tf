@@ -26,8 +26,7 @@ variable "masters" {
       gw          = "192.168.178.1"
       memory      = 8192
       disk0        = "50G"
-      disk1        = "60G"
-      target_node = "pve-02"
+      target_node = "pve-01"
     }
 #    k8s-cp02 = {
 #      id          = 4011
@@ -57,42 +56,22 @@ variable "workers" {
     wk-01 = {
       id          = 4020
       cidr        = "192.168.178.13/24"
-      cores       = 6
+      cores       = 8
       gw          = "192.168.178.1"
-      memory      = 12288
+      memory      = 15000
       disk0        = "50G"
-      disk1        = "60G"
+      disk1        = "80G"
       target_node = "pve-02"
     },
     wk-02 = {
       id          = 4021
       cidr        = "192.168.178.14/24"
-      cores       = 6
+      cores       = 8
       gw          = "192.168.178.1"
-      memory      = 12288
+      memory      = 15000
       disk0        = "50G"
-      disk1        = "60G"
+      disk1        = "80G"
       target_node = "pve-02"
-    },
-   wk-03 = {
-      id          = 4022
-      cidr        = "192.168.178.15/24"
-      cores       = 6
-      gw          = "192.168.178.1"
-      memory      = 12288
-      disk0        = "50G"
-      disk1        = "60G"
-      target_node = "pve-01"
-    },
-    wk-04 = {
-      id          = 4023
-      cidr        = "192.168.178.16/24"
-      cores       = 6
-      gw          = "192.168.178.1"
-      memory      = 12288
-      disk0        = "50G"
-      disk1        = "60G"
-      target_node = "pve-01"
     },
   }
 }

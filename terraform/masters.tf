@@ -21,14 +21,6 @@ resource "proxmox_vm_qemu" "kube-master" {
     ssd     = 1
     discard = "on"
   }
-  disk {
-    type    = "scsi"
-    storage = "local-lvm"
-    size    = each.value.disk1
-    format  = "raw"
-    ssd     = 1
-    discard = "on"
-  }
   serial {
     id   = 0
     type = "socket"
