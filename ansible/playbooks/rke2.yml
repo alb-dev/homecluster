@@ -4,7 +4,7 @@
   become: true
   vars: 
     rke2_download_kubeconf: true
-    rke2_version: v1.23.4+rke2r1
+    rke2_version: v1.23.5+rke2r1
     rke2_cni: canal 
     rke2_token: !vault |
           $ANSIBLE_VAULT;1.1;AES256
