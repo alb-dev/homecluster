@@ -62,10 +62,10 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: "wk-01"
+          - name: "k8s-wk-01"
             devices:
               - name: "sdb"
-          - name: "wk-02"
+          - name: "k8s-wk-02"
             devices:
               - name: "sdb"
       resources:
@@ -135,7 +135,7 @@ spec:
         spec:
           failureDomain: host
           replicated:
-            size: 3
+            size: 2
         storageClass:
           enabled: true
           name: ceph-block
@@ -169,9 +169,9 @@ spec:
             resources:
               requests:
                 cpu: 1000m
-                memory: 4Gi
+                memory: 2Gi
               limits:
-                memory: 4Gi
+                memory: 2Gi
         storageClass:
           enabled: true
           isDefault: false

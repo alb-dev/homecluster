@@ -1,8 +1,5 @@
 ---
-- name: Install the latest version of tar
-  dnf:
-    name: tar
-    state: latest
+
 - name: Install Keepalived when HA mode is enabled
   ansible.builtin.include_tasks: keepalived.yml
   when:
@@ -30,6 +27,10 @@
   when:
     - active_server is defined
     - groups[rke2_cluster_group_name] | length | int >= 2
+
+- name: Rolling restart
+  ansible.builtin.include_tasks: rolling_restart.yml
+  when: installed_rke2_version.stdout is defined and rke2_version != ( installed_rke2_version.stdout | default({}) )
 
 - name: Final steps
   ansible.builtin.include_tasks: summary.yml
