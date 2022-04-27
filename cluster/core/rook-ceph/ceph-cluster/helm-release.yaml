@@ -18,10 +18,10 @@ spec:
   install:
     createNamespace: true
     remediation:
-      retries: 3
+      retries: 2
   upgrade:
     remediation:
-      retries: 3
+      retries: 2
   dependsOn:
     - name: rook-ceph
       namespace: rook-ceph
@@ -66,9 +66,6 @@ spec:
             devices:
               - name: "sdb"
           - name: "wk-02"
-            devices:
-              - name: "sdb"
-          - name: "wk-03"
             devices:
               - name: "sdb"
       resources:
@@ -160,11 +157,11 @@ spec:
         spec:
           metadataPool:
             replicated:
-              size: 3
+              size: 2
           dataPools:
             - failureDomain: host
               replicated:
-                size: 3
+                size: 2
               name: data0
           metadataServer:
             activeCount: 1

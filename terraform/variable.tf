@@ -19,14 +19,14 @@ variable "common" {
 variable "masters" {
   type = map(map(string))
   default = {
-    cp-01 = {
+    k8s-cp-01 = {
       id          = 4010
       cidr        = "192.168.178.12/24"
       cores       = 4
       gw          = "192.168.178.1"
-      memory      = 8192
+      memory      = 6144
       disk0        = "50G"
-      target_node = "pve-01"
+      target_node = "pve-02"
     }
 #    k8s-cp02 = {
 #      id          = 4011
@@ -53,45 +53,25 @@ variable "masters" {
 variable "workers" {
   type = map(map(string))
   default = {
-    wk-01 = {
+    k8s-wk-01 = {
       id          = 4020
       cidr        = "192.168.178.13/24"
-      cores       = 8
+      cores       = 6
       gw          = "192.168.178.1"
-      memory      = 15000
+      memory      = 13000
       disk0        = "50G"
       disk1        = "60G"
       target_node = "pve-02"
     },
-    wk-02 = {
+    k8s-wk-02 = {
       id          = 4021
       cidr        = "192.168.178.14/24"
-      cores       = 8
+      cores       = 6
       gw          = "192.168.178.1"
-      memory      = 15000
+      memory      = 13000
       disk0        = "50G"
       disk1        = "60G"
       target_node = "pve-02"
-    },
-    wk-03 = {
-      id          = 4022
-      cidr        = "192.168.178.15/24"
-      cores       = 8
-      gw          = "192.168.178.1"
-      memory      = 8000
-      disk0        = "50G"
-      disk1        = "60G"
-      target_node = "pve-01"
-    },
-    wk-04 = {
-      id          = 4023
-      cidr        = "192.168.178.16/24"
-      cores       = 8
-      gw          = "192.168.178.1"
-      memory      = 8000
-      disk0        = "50G"
-      disk1        = "60G"
-      target_node = "pve-01"
     },
   }
 }
