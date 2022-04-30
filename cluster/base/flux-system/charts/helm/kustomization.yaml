@@ -18,3 +18,4 @@ resources:
 - descheduler-charts.yaml
 - rook-ceph-charts.yaml
 - kasten-charts.yaml
+- rancher-server-charts.yaml
