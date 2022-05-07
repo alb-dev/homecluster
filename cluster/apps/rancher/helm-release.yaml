@@ -23,3 +23,7 @@ spec:
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+  tls:
+    # options: rancher, letsEncrypt, secret
+    source: rancher
+    secretName: tls-rancher-ingress

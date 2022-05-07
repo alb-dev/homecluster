@@ -26,7 +26,7 @@ variable "masters" {
       gw          = "192.168.178.1"
       memory      = 6144
       disk0        = "50G"
-      target_node = "pve-02"
+      target_node = "pve-02yes"
     }
 #    k8s-cp02 = {
 #      id          = 4011
