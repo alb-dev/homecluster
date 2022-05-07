@@ -78,21 +78,21 @@ spec:
             memory: "512Mi"
         mon:
           limits:
-            cpu: "2000m"
+            cpu: "1000m"
             memory: "1Gi"
           requests:
-            cpu: "1000m"
+            cpu: "500m"
             memory: "500Mi"
         osd:
           limits:
-            cpu: "1000m"
+            cpu: "500m"
             memory: "2Gi"
           requests:
             cpu: "500m"
             memory: "1Gi"
         prepareosd:
           limits:
-            cpu: "1000m"
+            cpu: "500m"
             memory: "200Mi"
           requests:
             cpu: "500m"
@@ -168,7 +168,7 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 1000m
+                cpu: 500m
                 memory: 2Gi
               limits:
                 memory: 2Gi
