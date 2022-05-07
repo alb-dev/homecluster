@@ -8,6 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
+      # renovate: registryUrl=https://releases.rancher.com/server-charts/stable
       chart: rancher
       version: 2.6.4
       sourceRef:
@@ -23,7 +24,10 @@ spec:
       annotations:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+<<<<<<< HEAD
   tls:
     # options: rancher, letsEncrypt, secret
     source: rancher
     secretName: tls-rancher-ingress
+=======
+>>>>>>> 02d18b09f192d8bf478b3b39e3728bddf4442e1b
