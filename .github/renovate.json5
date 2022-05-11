@@ -33,7 +33,7 @@
   "kubernetes": {
     "fileMatch": [
       "cluster/.+\\.ya?ml$",
-      "provision/ansible/.+\\.ya?ml.j2$"
+      "ansible/.+\\.ya?ml.j2$"
     ]
   },
   "regexManagers": [
@@ -41,7 +41,7 @@
     {
       "fileMatch": [
         "cluster/.+\\.ya?ml$",
-        "provision/ansible/.+\\.ya?ml$"
+        "ansible/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "datasource=(?<datasource>.*?)( versioning=(?<versioning>.*?))?\n *url: https:\/\/github\\.com\/(?<depName>.*?)\\.git\n *ref:\n *tag: (?<currentValue>.*)\n",
