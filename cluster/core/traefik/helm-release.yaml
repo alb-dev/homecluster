@@ -63,7 +63,6 @@ spec:
       - "--entryPoints.websecure.forwardedHeaders.trustedIPs=10.0.0.0/8"
     additionalArguments:
       - "--providers.kubernetesingress.ingressendpoint.ip=${TRAFIK_LB_IP}"
-      - "--certificatesresolvers.leresolver.acme.keytype=EC256"
       - "--certificatesresolvers.leresolver.acme.dnschallenge=true"
       - "--certificatesresolvers.leresolver.acme.dnschallenge.provider=netcup"
       - "--certificatesresolvers.leresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
