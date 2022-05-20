@@ -21,7 +21,7 @@ spec:
       path: /volume1/kubernetes/
       mountOptions: 
       - hard 
-      - nfsvers=3
+      - nfsvers=4.1
     storageClass:
      create: true
      name: nfs-client
