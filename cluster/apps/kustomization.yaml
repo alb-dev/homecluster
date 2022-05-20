@@ -9,4 +9,4 @@ resources:
 - uptime-kuma
 - kasten-io  
 - paperless
-#- rancher
+- external-dns

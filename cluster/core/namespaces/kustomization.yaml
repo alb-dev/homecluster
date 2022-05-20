@@ -11,7 +11,7 @@ resources:
 #- home-assistant.yaml
 - monitoring.yaml
 - uptime-kuma.yaml
-#- minio.yaml
+- networking.yaml
 - paperless.yaml
 - falco-system.yaml
 - home.yaml
