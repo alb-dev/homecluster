@@ -19,3 +19,4 @@ resources:
 - rook-ceph-charts.yaml
 - kasten-charts.yaml
 - external-dns-charts.yaml
+- ingress-nginx-charts.yaml
