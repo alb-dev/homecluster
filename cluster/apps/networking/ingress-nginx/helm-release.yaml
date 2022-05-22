@@ -24,8 +24,10 @@ spec:
         - name: TZ
           value: "${TIMEZONE}"
       service:
-        externalIPs:
-          - "${NGINX_LB_IP}"
+        type: LoadBalancer
+        spec:
+        loadBalancerIP:
+            - "${NGINX_LB_IP}"
         externalTrafficPolicy: Local
       publishService:
         enabled: true
