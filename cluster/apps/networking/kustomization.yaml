@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - external-dns
 - ingress-nginx
-- external-services
+#- external-services
