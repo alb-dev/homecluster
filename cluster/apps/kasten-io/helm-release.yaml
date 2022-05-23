@@ -43,11 +43,8 @@ spec:
     clusterName: k8s
     ingress:
       create: true
-      class: traefik
+      class: nginx
       host: &host "k10.${SECRET_DOMAIN}"
-      annotations:
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
       urlPath: k10
       hosts:
         - *host

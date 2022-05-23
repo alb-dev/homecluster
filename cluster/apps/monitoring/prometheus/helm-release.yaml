@@ -227,10 +227,7 @@ spec:
       ingress:
         enabled: true
         pathType: Prefix
-        ingressClassName: "traefik"
-        annotations:
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+        ingressClassName: "nginx"
         hosts:
           - "alertmanager.${SECRET_DOMAIN}"
         tls:
@@ -409,11 +406,7 @@ spec:
         pathType: Prefix
         # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
         # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-        ingressClassName: "traefik"
-        annotations:
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-            traefik.ingress.kubernetes.io/tls-acme: "true"
-            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+        ingressClassName: "nginx"
         hosts:
             - "grafana.${SECRET_DOMAIN}"
         tls: 

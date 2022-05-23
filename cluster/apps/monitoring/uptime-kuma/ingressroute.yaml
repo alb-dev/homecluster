@@ -2,9 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-    traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+    kubernetes.io/ingress.class: nginx
   name: kuma-ingress
   namespace: uptime-kuma
 spec:

@@ -59,10 +59,7 @@ spec:
         # @default -- See values.yaml
         main:
           enabled: true
-          ingressClassName: "traefik"
-          annotations:
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+          ingressClassName: "nginx"
           #  traefik.ingress.kubernetes.io/router.tls.domains.0.main: "vaultwarden.${SECRET_DOMAIN}"
           hosts:
             - host: "vaultwarden.${SECRET_DOMAIN}"
@@ -76,10 +73,7 @@ spec:
               - "vaultwarden.${SECRET_DOMAIN}"
         admin:
           enabled: true
-          ingressClassName: "traefik"
-          annotations:
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+          ingressClassName: "nginx"
           hosts:
             - host: "vaultwarden.${SECRET_DOMAIN}"
               paths:
