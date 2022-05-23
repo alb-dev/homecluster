@@ -17,3 +17,4 @@ resources:
 - home.yaml
 - rook-ceph.yaml
 - kasten-io.yaml
+- cert-manager.yaml

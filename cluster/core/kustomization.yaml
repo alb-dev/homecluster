@@ -4,6 +4,7 @@ resources:
 - namespaces
 - metallb-system
 - nfs-provisioner
+- cert-manager
 #- traefik
 - system-upgrade
 - kube-system
