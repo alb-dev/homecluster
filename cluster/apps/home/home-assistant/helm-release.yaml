@@ -71,7 +71,6 @@ spec:
         ingress:
           enabled: true
           ingressClassName: "nginx"
-          annotations:
           hosts:
             - host: "hass-config.${SECRET_DOMAIN}"
               paths:
