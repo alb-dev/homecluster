@@ -4,7 +4,7 @@ metadata:
   name: pv-adguard-conf
   labels:
     usage: adguard-conf
-  namespace: adguard
+  namespace: home
 spec:
   capacity:
     storage: 1024Mi

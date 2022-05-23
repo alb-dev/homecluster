@@ -4,7 +4,7 @@ metadata:
   name: pv-adguard-work
   labels:
     usage: adguard-work
-  namespace: adguard
+  namespace: home
 spec:
   capacity:
     storage: 1024Mi

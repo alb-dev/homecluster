@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-adguard-work
-  namespace: adguard
+  namespace: home
 spec:
   volumeName: pv-adguard-work
   storageClassName: "nfs-adguard-work"
