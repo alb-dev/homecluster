@@ -919,10 +919,7 @@ spec:
         ingress:
           enabled: true
           pathType: Prefix
-          ingressClassName: "traefik"
-          annotations:
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-            traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+          ingressClassName: "nginx"
           hosts:
             - "prometheus.${SECRET_DOMAIN}"
           tls:
