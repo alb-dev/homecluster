@@ -26,8 +26,7 @@ spec:
       service:
         type: LoadBalancer
         spec:
-        loadBalancerIP:
-            - "${NGINX_LB_IP}"
+        loadBalancerIP: "${NGINX_LB_IP}"
         externalTrafficPolicy: Local
       publishService:
         enabled: true
