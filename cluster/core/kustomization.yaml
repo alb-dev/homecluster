@@ -4,7 +4,7 @@ resources:
 - namespaces
 - metallb-system
 - nfs-provisioner
-- traefik
+#- traefik
 - system-upgrade
 - kube-system
 - rook-ceph
