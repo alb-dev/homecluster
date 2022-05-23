@@ -70,10 +70,8 @@ spec:
           - "/config/.vscode"
         ingress:
           enabled: true
-          ingressClassName: "traefik"
+          ingressClassName: "nginx"
           annotations:
-              traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-              traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
           hosts:
             - host: "hass-config.${SECRET_DOMAIN}"
               paths:

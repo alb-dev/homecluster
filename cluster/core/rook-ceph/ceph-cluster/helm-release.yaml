@@ -31,9 +31,7 @@ spec:
     ingress:
       dashboard:
         annotations:
-          kubernetes.io/ingress.class: traefik
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.tls.certresolver: leresolver
+          kubernetes.io/ingress.class: nginx
         host:
           name: "ceph.${SECRET_DOMAIN}"
           path: "/"
