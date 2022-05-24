@@ -6,6 +6,6 @@ resources:
 - nfs-provisioner
 - cert-manager
 #- traefik
-- system-upgrade
+#- system-upgrade
 - kube-system
 - rook-ceph

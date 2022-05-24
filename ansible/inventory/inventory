@@ -1,9 +1,12 @@
 [masters]
 k8s-cp-01 ansible_host=192.168.178.12 rke2_type=server
+k8s-cp-02 ansible_host=192.168.178.13 rke2_type=server
+k8s-cp-03 ansible_host=192.168.178.14 rke2_type=server
 
 [workers]
-k8s-wk-01 ansible_host=192.168.178.13 rke2_type=agent
-k8s-wk-02 ansible_host=192.168.178.14 rke2_type=agent
+k8s-wk-01 ansible_host=192.168.178.15 rke2_type=agent
+k8s-wk-02 ansible_host=192.168.178.16 rke2_type=agent
+k8s-wk-03 ansible_host=192.168.178.17 rke2_type=agent
 [k8s_cluster:children]
 masters
 workers

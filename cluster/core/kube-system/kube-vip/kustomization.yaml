@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
 - kube-vip-rbac.yaml
 - kube-vip-daemon.yaml
-#- nginx-ingress

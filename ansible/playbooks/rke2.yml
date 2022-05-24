@@ -3,6 +3,10 @@
   hosts: all
   become: true
   vars: 
+    rke2_ha_mode: true
+    rke2_server_taint: true
+    rke2_ha_mode_keepalived: true
+    rke2_api_ip: 192.168.178.11
     rke2_download_kubeconf: true
     rke2_version: v1.23.6+rke2r2
     rke2_cni: canal 
