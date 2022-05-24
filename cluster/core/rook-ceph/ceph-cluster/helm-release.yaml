@@ -66,6 +66,9 @@ spec:
           - name: "k8s-wk-02"
             devices:
               - name: "sdb"
+          - name: "k8s-wk-03"
+            devices:
+              - name: "sdb"
       resources:
         mgr:
           limits:
