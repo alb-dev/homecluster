@@ -33,7 +33,7 @@
   "kubernetes": {
     "fileMatch": [
       "cluster/.+\\.ya?ml$",
-      "ansible/.+\\.ya?ml.j2$"
+      "provision/ansible/.+\\.ya?ml.j2$"
     ]
   },
   "regexManagers": [
@@ -41,7 +41,7 @@
     {
       "fileMatch": [
         "cluster/.+\\.ya?ml$",
-        "ansible/.+\\.ya?ml$"
+        "provision/ansible/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "datasource=(?<datasource>.*?)( versioning=(?<versioning>.*?))?\n *url: https:\/\/github\\.com\/(?<depName>.*?)\\.git\n *ref:\n *tag: (?<currentValue>.*)\n",
@@ -55,26 +55,6 @@
     {
       "fileMatch": [
         "cluster/crds/cert-manager/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n.*\\/(?<currentValue>.*?)\\/"
-      ],
-      "datasourceTemplate": "helm"
-    },
-    // external-snappshotter 
-    {
-      "fileMatch": [
-        "cluster/crds/external-snapshotter/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n.*\\/(?<currentValue>.*?)\\/"
-      ],
-      "datasourceTemplate": "helm"
-    },
-    // Prometheus 
-    {
-      "fileMatch": [
-        "cluster/crds/kube-prometheus-stack/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n.*\\/(?<currentValue>.*?)\\/"
