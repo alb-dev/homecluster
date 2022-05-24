@@ -33,7 +33,7 @@
   "kubernetes": {
     "fileMatch": [
       "cluster/.+\\.ya?ml$",
-      "provision/ansible/.+\\.ya?ml.j2$"
+      "ansible/.+\\.ya?ml.j2$"
     ]
   },
   "regexManagers": [
@@ -41,7 +41,7 @@
     {
       "fileMatch": [
         "cluster/.+\\.ya?ml$",
-        "provision/ansible/.+\\.ya?ml$"
+        "ansible/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "datasource=(?<datasource>.*?)( versioning=(?<versioning>.*?))?\n *url: https:\/\/github\\.com\/(?<depName>.*?)\\.git\n *ref:\n *tag: (?<currentValue>.*)\n",
@@ -61,10 +61,19 @@
       ],
       "datasourceTemplate": "helm"
     },
+    {
+      "fileMatch": [
+        "cluster/crds/kube-prometheus-stack/.+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n.*\\/(?<currentValue>.*?)\\/"
+      ],
+      "datasourceTemplate": "helm"
+    },
     // regexManager to read and process Traefik CRD's
     {
       "fileMatch": [
-        "cluster/crds/traefik/.+\\.ya?ml$"
+        "cluster/crds/external-snapshotter/.+\\.ya?ml$"
       ],
       "matchStrings": [
         "registryUrl=(?<registryUrl>.*?) chart=(?<depName>.*?)\n *tag: v(?<currentValue>.*)\n"
