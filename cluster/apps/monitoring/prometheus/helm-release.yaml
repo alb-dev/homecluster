@@ -16,6 +16,9 @@ spec:
         name: prometheus-community-charts
         namespace: flux-system
       interval: 5m
+  dependsOn:
+    - name: rook-ceph-cluster
+      namespace: rook-ceph
   values:
   # Default values for kube-prometheus-stack.
     # This is a YAML-formatted file.
