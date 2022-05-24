@@ -62,7 +62,7 @@ spec:
           ingressClassName: "nginx"
           #  traefik.ingress.kubernetes.io/router.tls.domains.0.main: "vaultwarden.${SECRET_DOMAIN}"
           hosts:
-            - host: "vaultwarden.${SECRET_DOMAIN}"
+            - host: "pw.${SECRET_DOMAIN}"
               paths:
                 - path: /
                   pathType: Prefix
@@ -70,18 +70,18 @@ spec:
                     port: 80
           tls:
           - hosts:
-              - "vaultwarden.${SECRET_DOMAIN}"
+              - "pw.${SECRET_DOMAIN}"
         admin:
           enabled: true
           ingressClassName: "nginx"
           hosts:
-            - host: "vaultwarden.${SECRET_DOMAIN}"
+            - host: "pw.${SECRET_DOMAIN}"
               paths:
                 - path: /admin
                   pathType: Prefix
           tls:
             - hosts:
-                - "vaultwarden.${SECRET_DOMAIN}"
+                - "pw.${SECRET_DOMAIN}"
       # -- Configure persistence settings for the chart under this key.
       # @default -- See values.yaml
       persistence:
