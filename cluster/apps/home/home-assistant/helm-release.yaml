@@ -73,6 +73,8 @@ spec:
           ingressClassName: "nginx"
           hosts:
             - host: "hass-config.${SECRET_DOMAIN}"
+              annotations:
+                cert.manager.io/cluster-issuer: "letsencrypt-production"
               paths:
                 - path: /
                   pathType: Prefix
