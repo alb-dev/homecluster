@@ -10,7 +10,7 @@ spec:
       spec:
         # renovate: registryUrl=https://k8s-at-home.com/charts/
         chart: vaultwarden
-        version: 4.2.2
+        version: 4.2.3
         sourceRef:
           kind: HelmRepository
           name: k8s-at-home-charts
@@ -22,7 +22,7 @@ spec:
         # -- image pull policy
         pullPolicy: IfNotPresent
         # -- image tag
-        tag: 1.24.0
+        tag: 1.25.0
 
       strategy:
         type: Recreate
