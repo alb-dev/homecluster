@@ -8,8 +8,8 @@ metadata:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
 spec:
-  externalIPs: 
-    - ${NFS_SERVER}
+  type: ExternalName
+  externalName: nas.${SECRET_PRIVATE_DOMAIN}.
   ports:
     - name: http
       port: &port 5000

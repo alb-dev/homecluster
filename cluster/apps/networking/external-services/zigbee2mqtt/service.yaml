@@ -8,8 +8,8 @@ metadata:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
 spec:
-  externalIPs: 
-    - ${HOME_SERVER}
+  type: ExternalName
+  externalName: zigbee.${SECRET_PRIVATE_DOMAIN}.
   ports:
     - name: http
       port: &port 8080
