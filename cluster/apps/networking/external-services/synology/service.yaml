@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
 spec:
-  type: ExternalName
   externalIPs: ${NFS_SERVER}
   ports:
     - name: http
