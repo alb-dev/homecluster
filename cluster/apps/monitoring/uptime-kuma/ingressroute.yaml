@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    
   name: kuma-ingress
   namespace: uptime-kuma
 spec:
