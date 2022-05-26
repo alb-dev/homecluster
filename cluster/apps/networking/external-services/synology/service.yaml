@@ -7,8 +7,6 @@ metadata:
   labels:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   type: ExternalName
   externalName: nas.${SECRET_PRIVATE_DOMAIN}.
