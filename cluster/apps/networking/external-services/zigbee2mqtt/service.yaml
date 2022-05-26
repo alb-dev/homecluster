@@ -8,7 +8,8 @@ metadata:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
 spec:
-  externalIPs: ${HOME_SERVER}
+  externalIPs: 
+    - ${HOME_SERVER}
   ports:
     - name: http
       port: &port 8080
