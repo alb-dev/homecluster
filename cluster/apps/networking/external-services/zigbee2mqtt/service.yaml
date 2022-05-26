@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: &app zigbee
+  namespace: networking
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
+spec:
+  type: ExternalName
+  externalIPs: ${HOME_SERVER}
+  ports:
+    - name: http
+      port: &port 8080
+      protocol: TCP
+      targetPort: *port
