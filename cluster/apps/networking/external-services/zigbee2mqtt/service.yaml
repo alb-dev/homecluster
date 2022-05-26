@@ -7,11 +7,13 @@ metadata:
   labels:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   type: ExternalName
   externalName: zigbee.${SECRET_PRIVATE_DOMAIN}.
   ports:
-    - name: https
+    - name: http
       port: &port 443
       protocol: TCP
       targetPort: *port
