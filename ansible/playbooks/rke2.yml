@@ -3,10 +3,25 @@
   hosts: all
   become: true
   vars: 
-    rke2_ha_mode: true
+    SECRET_PRIVATE_DOMAIN: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          33356666313265343837333565326330343838356634303336366661663865356662383863323964
+          3031363838613034366135663662613831623831656161340a303561363265633864366265336539
+          32386161616665643933653436343261653539373132303036646666343739623962303332373336
+          6166383462643831310a666639306438323734343463393161306664656462333562303634373137
+          3161 
+    rke2_pod_cidr: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          30393238613263646366666432373930316335303331393534666261646336303036393561303730
+          3562646161383131323761653662343338333038343231340a626537346633306331613862383761
+          36386131393930376338363066633731346330633466633134376161383230306633616337343138
+          6662373636343030340a346531326438616531666463623864653430336436316336646639303932
+          3439
+    rke2_ha_mode: false
     rke2_server_taint: true
-    rke2_ha_mode_keepalived: true
-    rke2_api_ip: 192.168.178.11
+  #  rke2_custom_manifest: ../templates/rke2-cilium-config.yaml
+    rke2_ha_mode_keepalived: false
+    rke2_api_ip: 192.168.178.12
     rke2_download_kubeconf: true
     rke2_version: v1.23.6+rke2r2
     rke2_cni: canal 
@@ -23,8 +38,9 @@
       - "etcd-expose-metrics: true"
       - "etcd-snapshot-rentention: 20"
       - "disable-cloud-controller: true"
-      - "cluster-cidr: 10.20.0.0/16"
+      - "cluster-cidr: 10.19.0.0/16"
       - "service-cidr: 10.20.0.0/16"
       - "cluster-dns: 10.20.0.10"
+#      - "disable-kube-proxy: true"
   roles:
      - role: lablabs.rke2

@@ -3,8 +3,7 @@ kind: Kustomization
 resources:
 - adguard
 - jellyfin
-- home
-#- system-upgrade
+- system-upgrade
 - monitoring
 - vaultwarden
 - kasten-io  
