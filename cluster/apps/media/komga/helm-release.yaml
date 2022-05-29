@@ -27,7 +27,7 @@ spec:
       # -- image repository
       repository: gotson/komga
       # -- image tag
-      tag: 0.99.4
+      tag: 0.154.1
       # -- image pull policy
       pullPolicy: IfNotPresent
 
@@ -64,9 +64,9 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: komga-config-pvc
+        existingClaim: komga-config-nfs
         mountPath: /config
       data:
         enabled: true
-        existingClaim: komga-data-pvc
+        existingClaim: komga-data-nfs
         mountPath: /data
