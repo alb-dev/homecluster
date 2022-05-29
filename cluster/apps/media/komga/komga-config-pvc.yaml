@@ -23,7 +23,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: komga-config-nfs
-  namespace: default
+  namespace: media
 spec:
   accessModes:
     - ReadWriteOnce

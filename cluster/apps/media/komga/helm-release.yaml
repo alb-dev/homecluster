@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: jellyfin
+      chart: komga
       version: 2.3.2
       sourceRef:
         kind: HelmRepository
