@@ -26,7 +26,7 @@ metadata:
   namespace: media
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: komga-data-nfs
   resources:
     requests:
