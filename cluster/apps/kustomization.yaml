@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - default
 - home
+- media
 - jellyfin
 - system-upgrade
 - monitoring
