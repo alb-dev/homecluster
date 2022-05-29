@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - homer
 - home-assistant
-#- zigbee2mqtt
+- adguard
 #- mosquitto
