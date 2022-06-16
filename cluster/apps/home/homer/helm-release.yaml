@@ -31,7 +31,7 @@ spec:
                 pathType: Prefix
         tls:
         - hosts:
-            - "dashboard.${SECRET_DOMAIN}"
+            - "home.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
