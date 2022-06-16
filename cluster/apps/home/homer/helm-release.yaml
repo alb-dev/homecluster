@@ -32,6 +32,7 @@ spec:
         tls:
         - hosts:
             - "home.${SECRET_DOMAIN}"
+          secretName: "home.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
