@@ -32,7 +32,7 @@
           6636643634663335370a323737666637316362313336316235643739656163373961336165626563
           63363666316565303031363231643961396532623866373434386534343030383033
     rke2_disable:
-    - rke2-ingress-nginx
+      - rke2-ingress-nginx
     rke2_server_options: 
       - "etcd-expose-metrics: true"
       - "etcd-snapshot-rentention: 20"
@@ -42,4 +42,5 @@
       - "cluster-dns: 10.20.0.10"
  #     - "disable-kube-proxy: true"
   roles:
+     - role: dependencies
      - role: lablabs.rke2

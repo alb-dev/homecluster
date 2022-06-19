@@ -1,0 +1,16 @@
+---
+- name: iscsi utils && tar
+  dnf:
+    name:
+      - iscsi-initiator-utils
+      - tar
+    state: latest
+
+- name: Enable service httpd, and not touch the state
+  ansible.builtin.service:
+    name: iscsid
+    enabled: yes  
+- name: Enable service httpd, and not touch the state
+  ansible.builtin.service:
+    name: iscsid
+    enabled: restarted  
