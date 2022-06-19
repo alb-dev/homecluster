@@ -28,8 +28,9 @@ spec:
 #      createDefaultDiskLabeledNodes: true
       defaultDataLocality: best-effort
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
-      concurrentAutomaticEngineUpgradePerNodeLimit: 1
-      storageMinimalAvailablePercentage: 10
+      concurrentAutomaticEngineUpgradePerNodeLimit: 2
+      storageMinimalAvailablePercentage: 20
+      storageOverProvisioningPercentage: 200
       defaultReplicaCount: 3
       defaultLonghornStaticStorageClass: longhorn
     ingress:
