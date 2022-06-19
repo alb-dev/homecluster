@@ -16,8 +16,8 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
   dependsOn:
-    - name: rook-ceph-cluster
-      namespace: rook-ceph
+    - name: longhorn
+      namespace: longhorn-system
   values:
     image:
       # -- image repository
