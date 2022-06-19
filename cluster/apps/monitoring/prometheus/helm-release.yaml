@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   dependsOn:
-    - name: rook-ceph-cluster
-      namespace: rook-ceph
+    - name: longhorn
+      namespace: longhorn-system
   values:
   # Default values for kube-prometheus-stack.
     # This is a YAML-formatted file.
@@ -242,7 +242,7 @@ spec:
         storage: 
           volumeClaimTemplate:
             spec:
-              storageClassName: "ceph-block"
+              storageClassName: "longhorn"
               resources:
                 requests:
                   storage: 1Gi
@@ -941,7 +941,7 @@ spec:
           storageSpec:
             volumeClaimTemplate:
               spec:
-                storageClassName: "ceph-block"
+                storageClassName: "longhorn"
                 resources:
                   requests:
                     storage: 10Gi

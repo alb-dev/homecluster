@@ -3,16 +3,12 @@ kind: Kustomization
 resources:
 - metallb-system.yaml
 - nfs-provisioner.yaml
-- traefik-ingress.yaml
-- jellyfin.yaml
 - vaultwarden.yaml
 - monitoring.yaml
 - uptime-kuma.yaml
 - networking.yaml
 - paperless.yaml
-- falco-system.yaml
 - home.yaml
-- rook-ceph.yaml
-- kasten-io.yaml
+- longhorn-system.yaml
 - cert-manager.yaml
 - media.yaml

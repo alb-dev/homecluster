@@ -17,14 +17,20 @@
           36386131393930376338363066633731346330633466633134376161383230306633616337343138
           6662373636343030340a346531326438616531666463623864653430336436316336646639303932
           3439
-    rke2_ha_mode: false
-    rke2_server_taint: true
-  #  rke2_custom_manifest: ../templates/rke2-cilium-config.yaml
+    ke2_custom_manifest: ../templates/rke2-cilium-config.yaml
+    rke2_cluster_group_name: k8s_cluster
+    rke2_servers_group_name: controlplanes
+    rke2_agents_group_name: workers
+    rke2_ha_mode: true
     rke2_ha_mode_keepalived: false
-    rke2_api_ip: 192.168.178.12
+    rke2_ha_mode_kubevip: true
+    rke2_loadbalancer_ip_range: 10.0.1.224-10.0.1.239
+    rke2_api_ip: 192.168.178.11
     rke2_download_kubeconf: true
-    rke2_version: v1.23.6+rke2r2
-    rke2_cni: canal 
+    rke2_version: v1.23.7+rke2r2
+    rke2_additional_sans:
+      - 192.168.178.11
+    rke2_cni: cilium 
     rke2_token: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           39306630336265643062636137633631383535626132353333306139383466663435663866306162
@@ -33,7 +39,9 @@
           6636643634663335370a323737666637316362313336316235643739656163373961336165626563
           63363666316565303031363231643961396532623866373434386534343030383033
     rke2_disable:
-      - rke2-ingress-nginx 
+    - rke2-ingress-nginx
+    - rke2-kube-proxy
+    - rke2-canal
     rke2_server_options: 
       - "etcd-expose-metrics: true"
       - "etcd-snapshot-rentention: 20"

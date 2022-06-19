@@ -4,10 +4,10 @@ resources:
 - default
 - home
 - media
-- jellyfin
+#- jellyfin
 - system-upgrade
 - monitoring
 - vaultwarden
-- kasten-io  
+#- kasten-io  
 - paperless
 - networking
