@@ -27,7 +27,7 @@ spec:
         type: LoadBalancer
         spec:
         loadBalancerIP: "${NGINX_LB_IP}"
-        externalTrafficPolicy: Global
+        externalTrafficPolicy: Local
       publishService:
         enabled: true
       ingressClassResource:
