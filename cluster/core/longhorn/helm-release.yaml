@@ -33,6 +33,8 @@ spec:
       storageOverProvisioningPercentage: 200
       defaultReplicaCount: 3
       defaultLonghornStaticStorageClass: longhorn
+      replicaSoftAntiAffinity: false
+      allowVolumeCreationWithDegradedAvailability: false
     ingress:
       enabled: true
       host: "longhorn.${SECRET_DOMAIN}"
