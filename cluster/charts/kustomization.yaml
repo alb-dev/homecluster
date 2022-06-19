@@ -5,7 +5,6 @@ resources:
 - k8s-at-home-charts.yaml
 - metallb-charts.yaml
 - nfs-provisioner-charts.yaml
-- traefik-charts.yaml
 - prometheus-community-charts.yaml
 - weaveworks-kured-charts.yaml
 - minio-charts.yaml
@@ -16,8 +15,7 @@ resources:
 - coredns-charts.yaml
 - deliveryhero-charts.yaml
 - descheduler-charts.yaml
-- rook-ceph-charts.yaml
-- kasten-charts.yaml
 - external-dns-charts.yaml
 - ingress-nginx-charts.yaml
 - jetstack-charts.yaml
+- longhorn-charts.yaml
