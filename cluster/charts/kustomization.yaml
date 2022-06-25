@@ -18,3 +18,4 @@ resources:
 - ingress-nginx-charts.yaml
 - jetstack-charts.yaml
 - longhorn-charts.yaml
+- grafana-charts.yaml
