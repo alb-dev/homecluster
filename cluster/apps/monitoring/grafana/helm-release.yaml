@@ -74,7 +74,7 @@ spec:
                 type: prometheus
                 access: proxy
                 url: http://kube-prometheus-stack-prometheus.svc.cluster.local:9090
-                isDefault: true
+                #isDefault: true
  #             - name: Loki
  #               type: loki
  #               access: proxy
