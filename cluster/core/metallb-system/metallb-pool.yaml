@@ -1,3 +1,4 @@
+---
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
@@ -5,4 +6,4 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - "${METALLB_ARP_RANGE}"
+    - "${METALLB_ARP_RANGE}"
