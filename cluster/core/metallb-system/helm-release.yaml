@@ -15,13 +15,6 @@ spec:
         kind: HelmRepository
         name: metallb-charts
         namespace: flux-system
-  values:
-    configInline:
-      address-pools:
-      - name: default
-        protocol: layer2
-        addresses:
-            - "${METALLB_ARP_RANGE}"
 # disabeld until documentation is ready
     prometheus:
       ServiceAccount: 
