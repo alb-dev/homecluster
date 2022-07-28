@@ -4,4 +4,4 @@ resources:
 - kured
 - node-feature-discovery
 - descheduler
-- kube-vib
+- kube-vip
