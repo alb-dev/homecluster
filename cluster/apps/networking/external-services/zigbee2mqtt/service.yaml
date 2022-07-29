@@ -12,5 +12,5 @@ spec:
   externalName: zigbee.${SECRET_PRIVATE_DOMAIN}
   ports:
     - name: http
-      port: 443
+      port: 8080
       protocol: TCP
