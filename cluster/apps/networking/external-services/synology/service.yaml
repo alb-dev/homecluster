@@ -12,5 +12,5 @@ spec:
   externalName: nas.${SECRET_PRIVATE_DOMAIN}
   ports:
     - name: http
-      port: 5001
+      port: 5000
       protocol: TCP

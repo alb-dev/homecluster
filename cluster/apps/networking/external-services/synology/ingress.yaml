@@ -7,9 +7,8 @@ metadata:
   labels:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.3 TLSv1.2"
+#  annotations:
+#    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: nginx
   rules:
@@ -22,7 +21,7 @@ spec:
               service:
                 name: *app
                 port:
-                  number: 5001
+                  number: 5000
   tls:
     - hosts:
         - *host
