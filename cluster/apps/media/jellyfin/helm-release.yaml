@@ -77,9 +77,9 @@ spec:
     #   # $ cat /etc/group | grep "video\|render"
     #   # video:x:44:
     #   # render:x:109:
-       supplementalGroups:
-       - 39
-       - 997
+    #   supplementalGroups:
+    #   - 39
+    #   - 997
 
     # resources:
     #   requests:
