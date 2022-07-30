@@ -39,10 +39,13 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+          - host: "jelly.${SECRET_PRIVATE_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
         - hosts:
             - "jelly.${SECRET_DOMAIN}"
-            - "jelly.${SECRET_PRIVATE_DOMAIN}"
           secretName: "jelly.${SECRET_DOMAIN}"
     persistence:
       transcode:
