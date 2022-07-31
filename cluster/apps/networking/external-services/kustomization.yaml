@@ -5,3 +5,4 @@ resources:
   - zigbee2mqtt
   - synology
   - adguard
+  - jdownloader
