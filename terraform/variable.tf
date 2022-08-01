@@ -11,7 +11,7 @@ variable "common" {
     ciuser        = "alb"
     os_type       = "cloud-init"
     clone         = "linux-alma-server-9"
-    search_domain = "int.swalb.io"
+    search_domain = ""
     nameserver    = "192.168.178.5"
   }
 }
