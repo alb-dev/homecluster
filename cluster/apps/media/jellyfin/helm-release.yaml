@@ -54,7 +54,8 @@ spec:
         mountPath: /config
       cache:
         enabled: true
-        mountPath: /cache
+        type: emptyDir
+        medium: Memory
       # Cache does NOT contain temporary transcoding data.
       media:
         enabled: true
