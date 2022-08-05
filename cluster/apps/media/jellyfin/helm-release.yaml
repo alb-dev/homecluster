@@ -54,7 +54,6 @@ spec:
         mountPath: /config
       cache:
         enabled: true
-        existingClaim: pvc-jellyfin-cache
         mountPath: /cache
       # Cache does NOT contain temporary transcoding data.
       media:
