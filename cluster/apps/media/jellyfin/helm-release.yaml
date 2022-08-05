@@ -65,7 +65,7 @@ spec:
             server: 192.168.178.35
             path: /volume1/General/Video
         mountPath: /media
-        readOnly: false
+        readOnly: true
     # -- Configure the Security Context for the Pod
     podSecurityContext: {}
     #   runAsUser: 568
